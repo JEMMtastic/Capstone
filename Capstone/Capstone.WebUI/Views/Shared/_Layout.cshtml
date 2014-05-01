@@ -4,13 +4,36 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Site.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+    
+
+    @if (TempData["message"] != null) 
+        {
+            <div class="Message">@TempData["message"]</div>
+        }
+    <div class="Message">temp data will be here</div>
+
+
+    <div id="header">
+        <div class="title">Title of page, e.g. Create New User</div>
+    </div>
+
+
+    @*if user == admin, display AdminNavigation partial view
+    Integrate after Security is done*@
+    
+    <div id="categories">
+        @Html.Partial("UserNavigation")
+    </div>
+
+
+    <div id="content">
+         @RenderBody()
+    </div>
+
+
 </body>
 </html>
