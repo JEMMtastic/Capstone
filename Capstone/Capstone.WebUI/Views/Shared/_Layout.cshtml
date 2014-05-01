@@ -21,10 +21,15 @@
         <div class="title">Title of page, e.g. Create New User</div>
     </div>
 
+    <div id="BreadCrumb">
+
+    @Html.MvcSiteMap().Menu()
+    @Html.MvcSiteMap().SiteMapPath()
+        </div>
+
 
     @*if user == admin, display AdminNavigation partial view
     Integrate after Security is done*@
-    
     <div id="categories">
         @Html.Partial("UserNavigation")
     </div>
