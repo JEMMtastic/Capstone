@@ -11,11 +11,25 @@ namespace Capstone.WebUI.Controllers
 {
     public class AdminUserController : Controller
     { 
+        UserInterface uRepo;
+
+        // The default constructor is called by the framework
+        public AdminUserController()
+        {
+            uRepo = new UserRepository();
+        }
+
+        // Use this for dependency injection
+        public AdminUserController(UserInterface iUser)
+        {
+            uRepo = iUser;
+        }
+
         public ActionResult AdminUserIndex()
         {
             //need to get a list of all users
             var db = new CapstoneDbContext();
-            List<User> users = (from u in db.Users
+            List<User> users = (from u in db.Users.Include("BvLocation")
                                 select u).ToList<User>();
 
                
@@ -23,9 +37,10 @@ namespace Capstone.WebUI.Controllers
             return View(users);
         }
 
-        public ActionResult AddUser()
+        public ActionResult EditUser(int userId)
         {
-            return View();
+            User u = uRepo.GetUser(userId);
+            return View(u);
         }
 
     }

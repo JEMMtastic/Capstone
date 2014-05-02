@@ -10,7 +10,7 @@ namespace Capstone.Domain.Abstract
     public interface UserInterface
     {
          void AddUser(User u);
-         User GetUser(string name);
+         User GetUser(int userId);
          void DeleteUser(string name);
          void EditUser(string name);
     }

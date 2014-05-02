@@ -4,60 +4,30 @@
     ViewBag.Title = "AdminUserIndex";
 }
 
-<h2>AdminUserIndex</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>All Users</h2>
 <table>
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserFName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserLName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AccessLevel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserEmail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </th>
-        <th></th>
+        <th>Name</th>
+        <th>Access Level</th>
+        <th>Email</th>
+        <th>Phone</th>
     </tr>
-
 @foreach (var item in Model) {
     <tr>
+        <td>@Html.ActionLink(item.UserFName + " " + item.UserLName, "EditUser", "AdminUser", new { item.UserId }, null)</td>
+        <td>@Html.DisplayFor(modelItem => item.AccessLevel)</td>
+        <td>@Html.DisplayFor(modelItem => item.UserEmail)</td>
+        <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserFName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserLName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AccessLevel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+            @using (Html.BeginForm("Delete", "Admin"))
+            {
+               <input type ="submit" value ="Delete" />
+            }
         </td>
     </tr>
 }
-
 </table>
+<p>@Html.ActionLink("Add a new user", "CreateUser")</p>
+
+
+

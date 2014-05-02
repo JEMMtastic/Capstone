@@ -1,4 +1,5 @@
 ﻿using Capstone.Domain.Abstract;
+using Capstone.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,12 @@ namespace Capstone.Domain.Concrete
             db.SaveChanges();
         }
 
-        public Entities.User GetUser(string name)
+        public Entities.User GetUser(int userId)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            return (from u in db.Users
+                    where u.UserId == userId
+                    select u).FirstOrDefault();
         }
 
         public void DeleteUser(string name)

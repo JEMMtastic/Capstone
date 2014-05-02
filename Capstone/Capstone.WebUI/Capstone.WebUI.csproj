@@ -258,6 +258,7 @@
     <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\AdminUser\EditUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
