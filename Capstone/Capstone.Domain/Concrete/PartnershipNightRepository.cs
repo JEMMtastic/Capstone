@@ -23,7 +23,7 @@ namespace Capstone.Domain.Concrete
         public PartnershipNight GetPartnershipNightById(int eventId)
         {
             var db = new CapstoneDbContext();
-            return (from pnight in db.PartnershipNights
+            return (from pnight in db.PartnershipNights.Include("Charity").Include("BVLocation")
                     where pnight.PartnershipNightId == eventId
                     select pnight).FirstOrDefault();
         }
@@ -31,7 +31,7 @@ namespace Capstone.Domain.Concrete
         public PartnershipNight GetPartnershipNightByDate(DateTime date, BvLocation loc)
         {
             var db = new CapstoneDbContext();
-            return (from pnight in db.PartnershipNights
+            return (from pnight in db.PartnershipNights.Include("Charity").Include("BVLocation")
                     where pnight.Date == date && pnight.BVLocation == loc
                     select pnight).FirstOrDefault();
         }
@@ -39,7 +39,7 @@ namespace Capstone.Domain.Concrete
         public IQueryable<PartnershipNight> GetPartnershipNights()  //Doing it this way as per suggestion. Seems highly inefficient to me to grab all partnership nights en masse, would prefer to narrow them via some criteria. Options commented out below for the future, should we decide to implement them.
         {
             var db = new CapstoneDbContext();
-            return (from pnight in db.PartnershipNights
+            return (from pnight in db.PartnershipNights.Include("Charity").Include("BVLocation")
                     select pnight).AsQueryable<PartnershipNight>();
         }
         /*
@@ -66,27 +66,41 @@ namespace Capstone.Domain.Concrete
         public void UpdatePartnershipNight(PartnershipNight pn)
         {
             var db = new CapstoneDbContext();
-            var dbEntry = db.PartnershipNights.Find(pn);
-            if (dbEntry != null)
+            if (pn.PartnershipNightId == 0)
             {
-                dbEntry.Date = pn.Date;
-                dbEntry.Charity = pn.Charity;
-                dbEntry.BVLocation = pn.BVLocation;
-                dbEntry.CheckRequestId = pn.CheckRequestId;
-                dbEntry.Comments = pn.Comments;
-                dbEntry.CheckRequestFinished = pn.CheckRequestFinished;
-                dbEntry.BeforeTheEventFinished = pn.BeforeTheEventFinished;
-                dbEntry.AfterTheEventFinished = pn.AfterTheEventFinished;
+                pn.Charity = db.Charities.Find(pn.Charity.CharityId);
+                pn.BVLocation = db.BvLocations.Find(pn.BVLocation.BvLocationId);
+                db.PartnershipNights.Add(pn);
+            }
+            else
+            {
+                var dbEntry = db.PartnershipNights.Find(pn);
+                if (dbEntry != null)
+                {
+                    dbEntry.Date = pn.Date;
+                    dbEntry.Charity = pn.Charity;
+                    dbEntry.BVLocation = pn.BVLocation;
+                    dbEntry.CheckRequestId = pn.CheckRequestId;
+                    dbEntry.Comments = pn.Comments;
+                    dbEntry.CheckRequestFinished = pn.CheckRequestFinished;
+                    dbEntry.BeforeTheEventFinished = pn.BeforeTheEventFinished;
+                    dbEntry.AfterTheEventFinished = pn.AfterTheEventFinished;
+                }
             }
             db.SaveChanges();
         }
         
-        public void DeletePartnershipNight(PartnershipNight pn)
+        public PartnershipNight DeletePartnershipNight(int id) //should this take a partnership night or id as parameter?
         {
             //throw new NotImplementedException();
             var db = new CapstoneDbContext();
-            db.PartnershipNights.Remove(pn);
-            db.SaveChanges();
+            PartnershipNight dbEntry = db.PartnershipNights.Find(id);
+            if (dbEntry != null)
+            {
+                db.PartnershipNights.Remove(dbEntry);
+                db.SaveChanges();
+            }
+            return dbEntry;
             //TODO: Add in error handling
         }
     }

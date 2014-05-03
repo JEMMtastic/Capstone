@@ -21,7 +21,7 @@ namespace Capstone.Domain.Abstract
         IQueryable<PartnershipNight> GetPartnershipNightsByDateRange(DateTime firstDate, DateTime lastDate, BvLocation loc); // returns all partnership nights for a given location, within the specified date range
          */
         void UpdatePartnershipNight(PartnershipNight pn); //should we return updated pnight?
-        void DeletePartnershipNight(PartnershipNight pn);
+        PartnershipNight DeletePartnershipNight(int id);
         //TODO: do we want to be able to get all upcoming (not past) events too? or all upcoming for one location? 
     }
 }

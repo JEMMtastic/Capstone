@@ -9,7 +9,7 @@ namespace Capstone.Domain.Migrations
         {
             DropForeignKey("dbo.StatsInfoes", "partnershipNight_PartnershipNightId", "dbo.PartnershipNights");
             DropIndex("dbo.StatsInfoes", new[] { "partnershipNight_PartnershipNightId" });
-            AlterColumn("dbo.StatsInfoes", "partnershipNight_PartnershipNightId", c => c.Int(nullable: false));
+            //AlterColumn("dbo.StatsInfoes", "partnershipNight_PartnershipNightId", c => c.Int(nullable: false));
             CreateIndex("dbo.StatsInfoes", "partnershipNight_PartnershipNightId");
             AddForeignKey("dbo.StatsInfoes", "partnershipNight_PartnershipNightId", "dbo.PartnershipNights", "PartnershipNightId", cascadeDelete: true);
         }
@@ -18,7 +18,7 @@ namespace Capstone.Domain.Migrations
         {
             DropForeignKey("dbo.StatsInfoes", "partnershipNight_PartnershipNightId", "dbo.PartnershipNights");
             DropIndex("dbo.StatsInfoes", new[] { "partnershipNight_PartnershipNightId" });
-            AlterColumn("dbo.StatsInfoes", "partnershipNight_PartnershipNightId", c => c.Int());
+            //AlterColumn("dbo.StatsInfoes", "partnershipNight_PartnershipNightId", c => c.Int());
             CreateIndex("dbo.StatsInfoes", "partnershipNight_PartnershipNightId");
             AddForeignKey("dbo.StatsInfoes", "partnershipNight_PartnershipNightId", "dbo.PartnershipNights", "PartnershipNightId");
         }

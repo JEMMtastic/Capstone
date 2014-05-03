@@ -7,13 +7,13 @@ namespace Capstone.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class CorrectedStatsInfoInterfaceTypo : IMigrationMetadata
+    public sealed partial class PNightandCharityupdates : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CorrectedStatsInfoInterfaceTypo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PNightandCharityupdates));
         
         string IMigrationMetadata.Id
         {
-            get { return "201405031836438_CorrectedStatsInfoInterfaceTypo"; }
+            get { return "201405032227347_PNight and Charity updates"; }
         }
         
         string IMigrationMetadata.Source

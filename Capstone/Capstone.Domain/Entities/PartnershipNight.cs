@@ -1,22 +1,82 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Capstone.Domain.Entities
 {
     public class PartnershipNight
     {
+        //Form flags determine if documents have been filled out yet
+        private bool ckRequest;
+        private bool before;
+        private bool after;
+
+        //Constructor to set flags to default
+        public PartnershipNight()
+        {
+            //Set form flags to false when the event is first created
+            ckRequest = false;
+            before = false;
+            after = false;
+        }
+
+        [HiddenInput(DisplayValue = false)]
         public int PartnershipNightId { get; set; }
+
+        [Required(ErrorMessage="Please enter a date for the event.")]
         public DateTime Date { get; set; }
+        
+        [Required(ErrorMessage = "A Charity is required.")]
         public Charity Charity { get; set; } 
+        
+        [Required(ErrorMessage = "A BV Location is required.")]
         public BvLocation BVLocation { get; set; }
-        public int CheckRequestId { get; set; }
-        //public decimal AmountRaised { get; set; } //This is moved to StatsInfo
-        public string Comments { get; set; }
-        public bool CheckRequestFinished { get; set; }
-        public bool BeforeTheEventFinished { get; set; }
-        public bool AfterTheEventFinished { get; set; }
+        
+        //NOTE: Should this be a hidden input?
+        public int CheckRequestId { get; set; } //Not required when the event is first created
+
+        public string Comments { get; set; } // Optional
+
+        public bool CheckRequestFinished { 
+            get
+            {
+                return ckRequest;
+            }
+            set
+            {
+                ckRequest = value;
+            }
+         }
+
+        public bool BeforeTheEventFinished
+        {
+            get
+            {
+                return before;
+            }
+            set
+            {
+                before = value;
+            }
+        }
+
+        public bool AfterTheEventFinished
+        {
+            get
+            {
+                return after;
+            }
+            set
+            {
+                after = value;
+            }
+        }
+
+        //This is moved to StatsInfo:
+        //public decimal AmountRaised { get; set; } 
     }
 }
