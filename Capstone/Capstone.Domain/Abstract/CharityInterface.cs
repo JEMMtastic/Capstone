@@ -9,7 +9,10 @@ namespace Capstone.Domain.Abstract
 {
     public interface CharityInterface
     {
-        void AddCharity(Charity c);
-        Charity GetCharity(string name);
+        void AddCharity(Charity charity); //Adds charity
+        Charity GetCharityByName(string name); //Get charity by the name
+        //Charity GetCharityById(int id); //Get charity by id if necessary
+        void EditCharity(Charity charity); //Saves updated charity in db
+        Charity DeleteCharity(Charity charity); //Returns charity that was deleted for display and confirmation
     }
 }

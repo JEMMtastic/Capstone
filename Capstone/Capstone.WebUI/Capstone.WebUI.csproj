@@ -142,8 +142,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminCharityController.cs" />
     <Compile Include="Controllers\AdminLocController.cs" />
     <Compile Include="Controllers\AdminStatsController.cs" />
+    <Compile Include="Controllers\AdminPartnershipNightController.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">

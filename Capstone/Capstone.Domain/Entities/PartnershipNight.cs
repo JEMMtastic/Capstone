@@ -13,7 +13,7 @@ namespace Capstone.Domain.Entities
         public Charity Charity { get; set; } 
         public BvLocation BVLocation { get; set; }
         public int CheckRequestId { get; set; }
-        public decimal AmountRaised { get; set; }
+        //public decimal AmountRaised { get; set; } //This is moved to StatsInfo
         public string Comments { get; set; }
         public bool CheckRequestFinished { get; set; }
         public bool BeforeTheEventFinished { get; set; }

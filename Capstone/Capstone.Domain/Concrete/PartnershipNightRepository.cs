@@ -20,16 +20,29 @@ namespace Capstone.Domain.Concrete
             //TODO: Add in error handling
         }
 
-        public PartnershipNight GetPartnershipNightById(string eventId)
+        public PartnershipNight GetPartnershipNightById(int eventId)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            return (from pnight in db.PartnershipNights
+                    where pnight.PartnershipNightId == eventId
+                    select pnight).FirstOrDefault();
         }
 
         public PartnershipNight GetPartnershipNightByDate(DateTime date, BvLocation loc)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            return (from pnight in db.PartnershipNights
+                    where pnight.Date == date && pnight.BVLocation == loc
+                    select pnight).FirstOrDefault();
         }
 
+        public IQueryable<PartnershipNight> GetPartnershipNights()  //Doing it this way as per suggestion. Seems highly inefficient to me to grab all partnership nights en masse, would prefer to narrow them via some criteria. Options commented out below for the future, should we decide to implement them.
+        {
+            var db = new CapstoneDbContext();
+            return (from pnight in db.PartnershipNights
+                    select pnight).AsQueryable<PartnershipNight>();
+        }
+        /*
         public IQueryable<PartnershipNight> GetPartnershipNightsByMonth(DateTime extractMonthAndYear)
         {
             throw new NotImplementedException();
@@ -49,12 +62,25 @@ namespace Capstone.Domain.Concrete
         {
             throw new NotImplementedException();
         }
-
-        public PartnershipNight UpdatePartnershipNight(PartnershipNight pn)
+        */
+        public void UpdatePartnershipNight(PartnershipNight pn)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            var dbEntry = db.PartnershipNights.Find(pn);
+            if (dbEntry != null)
+            {
+                dbEntry.Date = pn.Date;
+                dbEntry.Charity = pn.Charity;
+                dbEntry.BVLocation = pn.BVLocation;
+                dbEntry.CheckRequestId = pn.CheckRequestId;
+                dbEntry.Comments = pn.Comments;
+                dbEntry.CheckRequestFinished = pn.CheckRequestFinished;
+                dbEntry.BeforeTheEventFinished = pn.BeforeTheEventFinished;
+                dbEntry.AfterTheEventFinished = pn.AfterTheEventFinished;
+            }
+            db.SaveChanges();
         }
-
+        
         public void DeletePartnershipNight(PartnershipNight pn)
         {
             //throw new NotImplementedException();
