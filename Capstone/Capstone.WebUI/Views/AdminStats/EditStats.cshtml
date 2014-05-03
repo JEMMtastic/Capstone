@@ -1,0 +1,14 @@
+﻿@model Capstone.Domain.Entities.StatsInfo
+
+@{
+    ViewBag.Title = "EditStats";
+}
+
+<h2>Edit Stats Info for @Model.StatsInfoId</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type ="submit" value ="Save" />
+    @Html.ActionLink("Cancel and return to List", "Index")
+}

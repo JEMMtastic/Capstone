@@ -77,6 +77,10 @@
     <Compile Include="Migrations\201405021929369_sillyMichelle.Designer.cs">
       <DependentUpon>201405021929369_sillyMichelle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405031836438_CorrectedStatsInfoInterfaceTypo.cs" />
+    <Compile Include="Migrations\201405031836438_CorrectedStatsInfoInterfaceTypo.Designer.cs">
+      <DependentUpon>201405031836438_CorrectedStatsInfoInterfaceTypo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405021929369_sillyMichelle.resx">
       <DependentUpon>201405021929369_sillyMichelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405031836438_CorrectedStatsInfoInterfaceTypo.resx">
+      <DependentUpon>201405031836438_CorrectedStatsInfoInterfaceTypo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

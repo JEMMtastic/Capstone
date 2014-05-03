@@ -16,7 +16,7 @@ namespace Capstone.Domain.Concrete
             db.SaveChanges();
         }
 
-        public Entities.User GetStatsInfo(int id)
+        public Entities.StatsInfo GetStatsInfo(int id)
         {
             throw new NotImplementedException();
         }

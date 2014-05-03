@@ -143,6 +143,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminLocController.cs" />
+    <Compile Include="Controllers\AdminStatsController.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -261,6 +262,8 @@
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\AdminUser\EditUser.cshtml" />
+    <Content Include="Views\AdminStats\Index.cshtml" />
+    <Content Include="Views\AdminStats\EditStats.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

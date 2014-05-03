@@ -10,7 +10,7 @@ namespace Capstone.Domain.Abstract
     public interface StatsInfoInterface
     {
         void AddStatsInfo(StatsInfo s);
-        User GetStatsInfo(int id);
+        StatsInfo GetStatsInfo(int statsInfoId);
         void DeleteStatsInfo(int id);
         void EditStatsInfo(int id);
     }
