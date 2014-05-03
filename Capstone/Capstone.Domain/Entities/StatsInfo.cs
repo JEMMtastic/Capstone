@@ -25,7 +25,7 @@ namespace Capstone.Domain.Entities
         [Required(ErrorMessage = "Please enter the guest count.")]
         public int GuestCount { get; set; }
 
-        //removing this temporarily - something isn't working with migrations[Required(ErrorMessage = "Please enter the partnership night.")]
+        [Required(ErrorMessage = "Please enter the partnership night.")]
         public PartnershipNight partnershipNight { get; set; }
     }
 }

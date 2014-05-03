@@ -81,6 +81,10 @@
     <Compile Include="Migrations\201405032227347_PNight and Charity updates.Designer.cs">
       <DependentUpon>201405032227347_PNight and Charity updates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405032237081_Minor Fix.cs" />
+    <Compile Include="Migrations\201405032237081_Minor Fix.Designer.cs">
+      <DependentUpon>201405032237081_Minor Fix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405032227347_PNight and Charity updates.resx">
       <DependentUpon>201405032227347_PNight and Charity updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405032237081_Minor Fix.resx">
+      <DependentUpon>201405032237081_Minor Fix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
