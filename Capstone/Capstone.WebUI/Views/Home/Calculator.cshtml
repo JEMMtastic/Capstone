@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "Calculator";
+}
+
+<h2>Calculator</h2>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Organization Information</th>
+    </tr>
+    <tr>
+        <td>Name to appear on the check:</td>
+        <td>@Html.TextBox("name")</td>
+        <td>Is this a New Partner?</td>
+        <td>Yes:  @Html.CheckBox("yes")</td>
+        <td>No:  @Html.CheckBox("no")</td>
+    </tr>
+    <tr>
+        <td>Purpose of the Partnership:</td>
+        <td>@Html.TextBox("purpose")</td>
+        <td>If yes, remember to submit a W-9 form</td>
+    </tr>
+    <tr>
+        <td>Contact Name:</td>
+        <td>@Html.TextBox("contactName")</td>
+        <td>and add a vendor form!</td>
+    </tr>
+    <tr>
+        <td>Organization Mailing Address:</td>
+        <td>@Html.TextBox("address1")</td>
+    </tr>
+    <tr>
+        <td>City, State:</td>
+        <td>@Html.TextBox("city")</td>
+        <td>Restaurant Hosting Partnership:</td>
+        <td>@Html.TextBox("restaurant")</td>
+    </tr>
+    <tr>
+        <td>Zip:</td>
+        <td>@Html.TextBox("zip")</td>
+    </tr>
+    <tr>
+        <td>Organization Phone Number:</td>
+        <td>@Html.TextBox("phone")</td>
+    </tr>
+    <tr>
+        <td>Federal Tax ID Number:</td>
+        <td>@Html.TextBox("taxId")</td>
+    </tr>
+</table>
+<br />
+<table>
+    <tr>
+        <td>Day of week of Partnership:</td>
+        <td>@Html.TextBox("pnDay")</td>
+        <td>Date of Partnership:</td>
+        <td>@Html.TextBox("pnDate")</td>  
+    </tr>
+</table>
+<br />
+<table>
+    <tr>
+        <td colspan="5">1. Actual Sales Information from Prior Year - 3 Weeks</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>*Forumula here</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2">Prior Year</td>
+        <td>@Html.TextBox("priorYr1")</td>
+        <td colspan="2">Prior Year</td>
+        <td>@Html.TextBox("priorYr2")</td>
+        <td colspan="2">Average</td>
+        <td>Last week This Year</td>
+    </tr>
+    <tr>
+        <td>Hours of Partnership</td>
+        <td>Adj Sales</td>
+        <td>G.C.</td>
+        <td>Adj Sales</td>
+        <td>G.C.</td>
+        <td>Adj Sales</td>
+        <td>G.C.</td>
+        <td>Sales</td>
+        <td>G.C.</td>
+        <td>Average Check</td>
+    </tr>
+    <tr>
+        <td>4-5</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc1A")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc2A")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc3A")</td>
+        <td>Sales</td>
+        <td>G.C.</td>
+        <td>@Html.TextBox("avgChk1A")</td>
+    </tr>
+    <tr>
+        <td>5-6</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc1B")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc2B")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc3B")</td>
+        <td>Sales</td>
+        <td>G.C.</td>
+        <td>@Html.TextBox("avgChk1B")</td>
+    </tr>
+    <tr>
+        <td>6-7</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc1C")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc2C")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc3C")</td>
+        <td>Sales</td>
+        <td>G.C.</td>
+        <td>@Html.TextBox("avgChk1C")</td>
+    </tr>
+    <tr>
+        <td>7-8</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc1D")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc2D")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc3D")</td>
+        <td>Sales</td>
+        <td>G.C.</td>
+        <td>@Html.TextBox("avgChk1D")</td>
+    </tr>
+    <tr>
+        <td>8-9</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc1E")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc2E")</td>
+        <td>$0</td>
+        <td>@Html.TextBox("gc3E")</td>
+        <td>Sales</td>
+        <td>G.C.</td>
+        <td>@Html.TextBox("avgChk1E")</td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>$0</td>
+        <td>$0</td>
+        <td>$0</td>
+        <td>$0</td>
+        <td>$0</td>
+        <td>$0</td>
+        <td>$0</td>
+        <td>$0</td>
+        <td>Formula Here</td>
+    </tr>
+</table>

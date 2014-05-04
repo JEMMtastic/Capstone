@@ -267,6 +267,7 @@
     <Content Include="Views\AdminStats\Index.cshtml" />
     <Content Include="Views\AdminStats\EditStats.cshtml" />
     <Content Include="Views\AdminLoc\EditLoc.cshtml" />
+    <Content Include="Views\Home\Calculator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

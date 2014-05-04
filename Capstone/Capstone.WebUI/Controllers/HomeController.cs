@@ -66,5 +66,10 @@ namespace Capstone.WebUI.Controllers
             return View();
         }
 
+        public ActionResult Calculator()
+        {
+            return View();
+        }
+
     }
 }
