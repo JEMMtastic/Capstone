@@ -85,6 +85,10 @@
     <Compile Include="Migrations\201405032237081_Minor Fix.Designer.cs">
       <DependentUpon>201405032237081_Minor Fix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405040032315_MoreRequireds.cs" />
+    <Compile Include="Migrations\201405040032315_MoreRequireds.Designer.cs">
+      <DependentUpon>201405040032315_MoreRequireds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405032237081_Minor Fix.resx">
       <DependentUpon>201405032237081_Minor Fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405040032315_MoreRequireds.resx">
+      <DependentUpon>201405040032315_MoreRequireds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

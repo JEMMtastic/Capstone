@@ -48,13 +48,17 @@ namespace Capstone.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 uRepo.SaveUser(u);
-                //TempData["message"] = string.Format("{0} has been saved", u.UserId);
+                TempData["message"] = string.Format("{0} has been saved", u.UserId);
                 return RedirectToAction("AdminUserIndex");
             }
             else
             {
                 return View(u);
             }
+        }
+        public ViewResult CreateUser()
+        {
+            return View("Edit", new User());
         }
 
     }

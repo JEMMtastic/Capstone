@@ -6,7 +6,7 @@
 
 <h2>Edit @Model.UserFName @Model.UserLName</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("EditUser", "AdminUser"))
 {
     @Html.EditorForModel()
    <!-- TODO:  figure out how to get BVLoc and list store num with ability to edit this for the user-->
