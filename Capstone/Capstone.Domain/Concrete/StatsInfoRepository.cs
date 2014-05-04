@@ -30,5 +30,15 @@ namespace Capstone.Domain.Concrete
         {
             throw new NotImplementedException();
         }
+
+        public IQueryable<Entities.StatsInfo> StatsInfos
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public void SaveStatsInfo(Entities.StatsInfo statsInfoId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
