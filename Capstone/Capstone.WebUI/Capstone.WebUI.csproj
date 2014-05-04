@@ -266,6 +266,7 @@
     <Content Include="Views\AdminUser\EditUser.cshtml" />
     <Content Include="Views\AdminStats\Index.cshtml" />
     <Content Include="Views\AdminStats\EditStats.cshtml" />
+    <Content Include="Views\AdminLoc\EditLoc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

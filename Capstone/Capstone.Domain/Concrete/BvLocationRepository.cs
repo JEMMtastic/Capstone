@@ -11,9 +11,12 @@ namespace Capstone.Domain.Concrete
     public class BvLocationRepository: BvLocationInterface
     {
 
-        public Entities.BvLocation GetBvLocation(string storeNum)
+        public Entities.BvLocation GetBvLocation(int bvLocationId)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            return (from l in db.BvLocations
+                    where l.BvLocationId == bvLocationId
+                    select l).FirstOrDefault();
         }
 
         public void AddBvLocation(BvLocation bvLocation)
@@ -23,14 +26,30 @@ namespace Capstone.Domain.Concrete
             db.SaveChanges(); ;
         }
 
-        public void DeleteBvLocation(string storeNum)
+        public BvLocation DeleteBvLocation(int locId)
         {
             throw new NotImplementedException();
         }
 
-        public BvLocation EditBvLocation(string storeNum)
+        public void SaveBvLocation(BvLocation l)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            if (l.BvLocationId == 0)
+                db.BvLocations.Add(l);
+            else
+            {
+                BvLocation dbEntry = db.BvLocations.Find(l.BvLocationId);
+                if (dbEntry != null)
+                {
+                    dbEntry.Address = l.Address;
+                    dbEntry.BvStoreNum = l.BvStoreNum;
+                    dbEntry.City = l.City;
+                    dbEntry.Phone = l.Phone;
+                    dbEntry.Zip = l.Zip;
+                }
+
+            }
+            db.SaveChanges();
         }
     }
 }

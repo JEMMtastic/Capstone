@@ -43,7 +43,7 @@ namespace Capstone.WebUI.Controllers
             return View(u);
         }
         [HttpPost]
-        public ActionResult EditUser2(User u)
+        public ActionResult EditUser(User u)
         {
             if (ModelState.IsValid)
             {

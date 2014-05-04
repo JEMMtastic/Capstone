@@ -6,52 +6,30 @@
 
 <h2>AdminLocIndex</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table>
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BvStoreNum)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Zip)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th></th>
+        <th>Store Number</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Zip</th>
+        <th>Phone</th>
     </tr>
-
 @foreach (var item in Model) {
     <tr>
+        <td>@Html.ActionLink(item.BvStoreNum, "EditLoc", "AdminLoc", new { item.BvLocationId }, null)</td>
+        <td>@Html.DisplayFor(modelItem => item.Address)</td>
+        <td>@Html.DisplayFor(modelItem => item.City)</td>
+        <td>@Html.DisplayFor(modelItem => item.Zip)</td>
+        <td>@Html.DisplayFor(modelItem => item.Phone)</td>
         <td>
-            @Html.DisplayFor(modelItem => item.BvStoreNum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Zip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BvLocationId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BvLocationId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BvLocationId })
+            @using (Html.BeginForm("DeleteLoc", "AdminLoc", new { item.BvLocationId }))
+            {
+               <input type ="submit" value ="Delete" />
+            }
         </td>
     </tr>
 }
-
 </table>
+<p>@Html.ActionLink("Add a new restaurant", "CreateLoc")</p>
+
+
