@@ -9,12 +9,9 @@ namespace Capstone.Domain.Abstract
 {
     public interface StatsInfoInterface
     {
+        void AddStatsInfo(StatsInfo s);
         IQueryable<StatsInfo> StatsInfos { get; }
         void SaveStatsInfo(StatsInfo statsInfoId);
         StatsInfo DeleteStatsInfo(int statsInfoId);
-
-        void AddStatsInfo(StatsInfo s);
-        StatsInfo GetStatsInfo(int statsInfoId);
-        void EditStatsInfo(int id);
     }
 }

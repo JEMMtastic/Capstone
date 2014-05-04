@@ -33,7 +33,8 @@ namespace Capstone.WebUI.Controllers
 
         public ViewResult EditStats(int statsInfoId)
         {
-            StatsInfo s = repository.GetStatsInfo(statsInfoId);
+            StatsInfo s = repository.StatsInfos
+                .FirstOrDefault(i => i.StatsInfoId == statsInfoId);
             return View(s);
         }
 

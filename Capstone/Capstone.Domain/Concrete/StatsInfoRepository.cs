@@ -11,34 +11,28 @@ namespace Capstone.Domain.Concrete
 {
     public class StatsInfoRepository : StatsInfoInterface
     {
+        CapstoneDbContext db = new CapstoneDbContext();
+
         public void AddStatsInfo(StatsInfo s)
         {
-            var db = new CapstoneDbContext();
             db.StatsInfos.Add(s);
             db.SaveChanges();
         }
 
         public StatsInfo GetStatsInfo(int id)
         {
-            var db = new CapstoneDbContext();
             return (from s in db.StatsInfos.Include("PartnershipNight")
                     where s.StatsInfoId == id
                     select s).FirstOrDefault();
         }
 
-        public void EditStatsInfo(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public IQueryable<StatsInfo> StatsInfos
         {
-            get { throw new NotImplementedException(); }
+            get { return db.StatsInfos; }
         }
 
         public void SaveStatsInfo(StatsInfo s)
         {
-            var db = new CapstoneDbContext();
             if (s.StatsInfoId == 0)
                 db.StatsInfos.Add(s);
             else
@@ -51,6 +45,15 @@ namespace Capstone.Domain.Concrete
                     dbEntry.CashDonations = s.CashDonations;
                     dbEntry.GuestCount = s.GuestCount;
                     dbEntry.partnershipNight = s.partnershipNight;
+                    if (dbEntry.partnershipNight != null)
+                    {
+                        s.partnershipNight = db.PartnershipNights.Find(s.partnershipNight.PartnershipNightId);
+                        dbEntry.partnershipNight = s.partnershipNight;
+                    }
+                    else
+                    {
+                        s.partnershipNight = null;
+                    }
                 }
             }
             db.SaveChanges();
@@ -58,7 +61,6 @@ namespace Capstone.Domain.Concrete
 
         public StatsInfo DeleteStatsInfo(int statsInfoId)
         {
-            var db = new CapstoneDbContext();
             StatsInfo dbEntry = db.StatsInfos.Find(statsInfoId);
             if (dbEntry != null)
             {
