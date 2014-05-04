@@ -22,11 +22,6 @@ namespace Capstone.Domain.Concrete
             throw new NotImplementedException();
         }
 
-        public void DeleteStatsInfo(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public void EditStatsInfo(int id)
         {
             throw new NotImplementedException();
@@ -55,6 +50,18 @@ namespace Capstone.Domain.Concrete
                 }
             }
             db.SaveChanges();
+        }
+
+        public StatsInfo DeleteStatsInfo(int statsInfoId)
+        {
+            var db = new CapstoneDbContext();
+            StatsInfo dbEntry = db.StatsInfos.Find(statsInfoId);
+            if (dbEntry != null)
+            {
+                db.StatsInfos.Remove(dbEntry);
+                db.SaveChanges();
+            }
+            return dbEntry;
         }
     }
 }

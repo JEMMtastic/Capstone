@@ -11,10 +11,10 @@ namespace Capstone.Domain.Abstract
     {
         IQueryable<StatsInfo> StatsInfos { get; }
         void SaveStatsInfo(StatsInfo statsInfoId);
+        StatsInfo DeleteStatsInfo(int statsInfoId);
 
         void AddStatsInfo(StatsInfo s);
         StatsInfo GetStatsInfo(int statsInfoId);
-        void DeleteStatsInfo(int id);
         void EditStatsInfo(int id);
     }
 }

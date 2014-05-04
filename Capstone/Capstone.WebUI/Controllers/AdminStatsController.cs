@@ -31,10 +31,41 @@ namespace Capstone.WebUI.Controllers
             return View(stats);
         }
 
-        public ActionResult EditStats(int statsInfoId)
+        public ViewResult EditStats(int statsInfoId)
         {
             StatsInfo s = repository.GetStatsInfo(statsInfoId);
             return View(s);
+        }
+
+        [HttpPost]
+        public ActionResult EditStats(StatsInfo s)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.SaveStatsInfo(s);
+                TempData["message"] = string.Format("{0} has been saved", s.StatsInfoId);
+                return RedirectToAction("AdminStatsIndex");
+            }
+            else
+            {
+                return View(s);
+            }
+        }
+
+        public ViewResult CreateStats()
+        {
+            return View("EditStats", new StatsInfo());
+        }
+
+        [HttpPost]
+        public ActionResult DeleteStats(int statsInfoId)
+        {
+            StatsInfo deletedStatsInfo = repository.DeleteStatsInfo(statsInfoId);
+            if (deletedStatsInfo != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted", deletedStatsInfo.StatsInfoId);
+            }
+            return RedirectToAction("Index");
         }
     }
 }
