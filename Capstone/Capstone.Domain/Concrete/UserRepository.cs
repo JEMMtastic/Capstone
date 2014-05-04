@@ -21,14 +21,22 @@ namespace Capstone.Domain.Concrete
         public Entities.User GetUser(int userId)
         {
             var db = new CapstoneDbContext();
-            return (from u in db.Users
+            return (from u in db.Users.Include("BvLocation")
                     where u.UserId == userId
                     select u).FirstOrDefault();
         }
 
-        public void DeleteUser(string name)
+        public User DeleteUser(int userId)
         {
-            throw new NotImplementedException();
+
+            var db = new CapstoneDbContext();
+            User dbEntry = db.Users.Find(userId);
+            if (dbEntry != null)
+            {
+                db.Users.Remove(dbEntry);
+                db.SaveChanges();
+            }
+            return dbEntry;
         }
 
         public void SaveUser(User u)

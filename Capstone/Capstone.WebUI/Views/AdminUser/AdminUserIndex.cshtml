@@ -11,6 +11,7 @@
         <th>Access Level</th>
         <th>Email</th>
         <th>Phone</th>
+        <th>Store Number</th>
     </tr>
 @foreach (var item in Model) {
     <tr>
@@ -18,8 +19,9 @@
         <td>@Html.DisplayFor(modelItem => item.AccessLevel)</td>
         <td>@Html.DisplayFor(modelItem => item.UserEmail)</td>
         <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+        <td>@Html.DisplayFor(modelItem => item.BvLocation.BvStoreNum)</td>
         <td>
-            @using (Html.BeginForm("Delete", "Admin"))
+            @using (Html.BeginForm("DeleteUser", "AdminUser", new { item.UserId }))
             {
                <input type ="submit" value ="Delete" />
             }

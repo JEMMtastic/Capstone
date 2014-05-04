@@ -29,7 +29,7 @@ namespace Capstone.WebUI.Controllers
         {
             //need to get a list of all users
             var db = new CapstoneDbContext();
-            List<User> users = (from u in db.Users
+            List<User> users = (from u in db.Users.Include("BvLocation")
                                 select u).ToList<User>();
 
                
@@ -43,7 +43,7 @@ namespace Capstone.WebUI.Controllers
             return View(u);
         }
         [HttpPost]
-        public ActionResult EditUser(User u)
+        public ActionResult EditUser2(User u)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,18 @@ namespace Capstone.WebUI.Controllers
         }
         public ViewResult CreateUser()
         {
-            return View("Edit", new User());
+            return View("EditUser", new User());
+        }
+
+        [HttpPost]
+        public ActionResult DeleteUser(int userId)
+        {
+            User deletedUser = uRepo.DeleteUser(userId);
+            if (deletedUser != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted", deletedUser.UserFName + deletedUser.UserLName);
+            }
+            return RedirectToAction("AdminUserIndex");
         }
 
     }
