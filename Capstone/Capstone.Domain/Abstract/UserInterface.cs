@@ -12,6 +12,6 @@ namespace Capstone.Domain.Abstract
          void AddUser(User u);
          User GetUser(int userId);
          void DeleteUser(string name);
-         void EditUser(string name);
+         void SaveUser(User u);
     }
 }

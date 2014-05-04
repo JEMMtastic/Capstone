@@ -29,7 +29,7 @@ namespace Capstone.WebUI.Controllers
         {
             //need to get a list of all users
             var db = new CapstoneDbContext();
-            List<User> users = (from u in db.Users.Include("BvLocation")
+            List<User> users = (from u in db.Users
                                 select u).ToList<User>();
 
                
@@ -41,6 +41,20 @@ namespace Capstone.WebUI.Controllers
         {
             User u = uRepo.GetUser(userId);
             return View(u);
+        }
+        [HttpPost]
+        public ActionResult EditUser(User u)
+        {
+            if (ModelState.IsValid)
+            {
+                uRepo.SaveUser(u);
+                //TempData["message"] = string.Format("{0} has been saved", u.UserId);
+                return RedirectToAction("AdminUserIndex");
+            }
+            else
+            {
+                return View(u);
+            }
         }
 
     }

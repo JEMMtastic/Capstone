@@ -31,9 +31,26 @@ namespace Capstone.Domain.Concrete
             throw new NotImplementedException();
         }
 
-        public void EditUser(string name)
+        public void SaveUser(User u)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            if (u.UserId == 0)
+                db.Users.Add(u);
+            else
+            {
+                User dbEntry = db.Users.Find(u.UserId);
+                if (dbEntry != null)
+                {
+                    dbEntry.UserFName = u.UserFName;
+                    dbEntry.UserLName = u.UserLName;
+                    dbEntry.UserEmail = u.UserEmail;
+                    dbEntry.PhoneNumber = u.PhoneNumber;
+                    dbEntry.AccessLevel = u.AccessLevel;
+                    dbEntry.BvLocation = u.BvLocation;
+                }
+
+            }
+            db.SaveChanges();
         }
     }
 }
