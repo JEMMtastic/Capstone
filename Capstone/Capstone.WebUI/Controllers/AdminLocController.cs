@@ -55,7 +55,7 @@ namespace Capstone.WebUI.Controllers
         }
         public ViewResult CreateLoc()
         {
-            return View("EditLoc", new User());
+            return View("EditLoc", new BvLocation());
         }
 
         [HttpPost]
