@@ -26,9 +26,16 @@ namespace Capstone.Domain.Concrete
             db.SaveChanges(); ;
         }
 
-        public BvLocation DeleteBvLocation(int locId)
+        public BvLocation DeleteBvLocation(int bvLocationId)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            BvLocation dbEntry = db.BvLocations.Find(bvLocationId);
+            if (dbEntry != null)
+            {
+                db.BvLocations.Remove(dbEntry);
+                db.SaveChanges();
+            }
+            return dbEntry;
         }
 
         public void SaveBvLocation(BvLocation l)

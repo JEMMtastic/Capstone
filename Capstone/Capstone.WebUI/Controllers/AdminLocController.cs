@@ -59,9 +59,9 @@ namespace Capstone.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult DeleteUser(int locId)
+        public ActionResult DeleteLoc(int bvLocationId)
         {
-            BvLocation deletedLoc = lRepo.DeleteBvLocation(locId);
+            BvLocation deletedLoc = lRepo.DeleteBvLocation(bvLocationId);
             if (deletedLoc != null)
             {
                 TempData["message"] = string.Format("{0} was deleted", deletedLoc.BvStoreNum);
