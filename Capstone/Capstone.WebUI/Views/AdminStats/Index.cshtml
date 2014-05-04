@@ -7,7 +7,7 @@
 <h2>Stats Info</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreateStatsInfo")
 </p>
 <table>
     <tr>
@@ -29,7 +29,7 @@
         <td>@Html.DisplayFor(modelItem => item.CashDonations)</td>
         <td>@Html.DisplayFor(modelItem => item.GuestCount)</td>
         <td>
-            @using (Html.BeginForm("Delete", "Admin"))
+            @using (Html.BeginForm("DeleteStatsInfo", "AdminStats", new { item.StatsInfoId }))
             {
                <input type ="submit" value ="Delete" />
             }

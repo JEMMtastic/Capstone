@@ -8,7 +8,12 @@
 
 @using (Html.BeginForm("EditStats", "AdminStats"))
 {
+    <p>Date</p>
+    //@Html.EditorFor(x => Model.partnershipNight.Date.ToShortDateString())
+    <p>Charity</p>
+    @Html.EditorFor(x => Model.partnershipNight.Charity.Name)
     @Html.EditorForModel()
+   
     <input type ="submit" value ="Save" />
-    @Html.ActionLink("Cancel and return to List", "Index")
+    @Html.ActionLink("Cancel and return to List", "Index", "AdminStats")
 }
