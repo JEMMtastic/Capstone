@@ -1,4 +1,5 @@
-﻿using Capstone.Domain.Abstract;
+﻿using Capstone.Domain.Entities;
+using Capstone.Domain.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,14 @@ namespace Capstone.Domain.Concrete
 {
     public class StatsInfoRepository : StatsInfoInterface
     {
-        public void AddStatsInfo(Entities.StatsInfo s)
+        public void AddStatsInfo(StatsInfo s)
         {
             var db = new CapstoneDbContext();
             db.StatsInfos.Add(s);
             db.SaveChanges();
         }
 
-        public Entities.StatsInfo GetStatsInfo(int id)
+        public StatsInfo GetStatsInfo(int id)
         {
             throw new NotImplementedException();
         }
@@ -31,14 +32,29 @@ namespace Capstone.Domain.Concrete
             throw new NotImplementedException();
         }
 
-        public IQueryable<Entities.StatsInfo> StatsInfos
+        public IQueryable<StatsInfo> StatsInfos
         {
             get { throw new NotImplementedException(); }
         }
 
-        public void SaveStatsInfo(Entities.StatsInfo statsInfoId)
+        public void SaveStatsInfo(StatsInfo s)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            if (s.StatsInfoId == 0)
+                db.StatsInfos.Add(s);
+            else
+            {
+                StatsInfo dbEntry = db.StatsInfos.Find(s.StatsInfoId);
+                if (dbEntry != null)
+                {
+                    dbEntry.TotalSales = s.TotalSales;
+                    dbEntry.AmountOfTotalSalesToCharity = s.AmountOfTotalSalesToCharity;
+                    dbEntry.CashDonations = s.CashDonations;
+                    dbEntry.GuestCount = s.GuestCount;
+                    dbEntry.partnershipNight = s.partnershipNight;
+                }
+            }
+            db.SaveChanges();
         }
     }
 }
