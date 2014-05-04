@@ -27,8 +27,7 @@ namespace Capstone.WebUI.Controllers
         {
             var db = new CapstoneDbContext();
             List<StatsInfo> stats = (from s in db.StatsInfos.Include("PartnershipNight")
-                                select s).ToList<StatsInfo>();
-
+                                        select s).ToList<StatsInfo>();
             return View(stats);
         }
 

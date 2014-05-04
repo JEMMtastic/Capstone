@@ -22,7 +22,7 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>@Html.ActionLink("Edit", "Edit", new { id=item.StatsInfoId })</td>
+        <td>@Html.ActionLink("Edit", "EditUser", new { id=item.StatsInfoId })</td>
         <td>@Html.DisplayFor(ModelItem => item.StatsInfoId)</td>
         <td>@Html.DisplayFor(modelItem => item.TotalSales)</td>
         <td>@Html.DisplayFor(modelItem => item.AmountOfTotalSalesToCharity)</td>
