@@ -11,8 +11,8 @@
 </p>
 <table>
     <tr>
-        <th>Edit</th>
-        <th>ID</th>
+        <th>Date</th>
+        <th>Charity</th>
         <th>Total Sales</th>
         <th>Sales to Charity</th>
         <th>Cash donations</th>
@@ -22,8 +22,8 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>@Html.ActionLink("Edit", "EditStats", new { id=item.StatsInfoId })</td>
-        <td>@Html.DisplayFor(ModelItem => item.StatsInfoId)</td>
+        <td>@Html.ActionLink(item.partnershipNight.Date.ToShortDateString(), "EditStats", "AdminStats", new { item.StatsInfoId }, null)</td>
+        <td>@Html.DisplayFor(ModelItem => item.partnershipNight.Charity.Name)</td>
         <td>@Html.DisplayFor(modelItem => item.TotalSales)</td>
         <td>@Html.DisplayFor(modelItem => item.AmountOfTotalSalesToCharity)</td>
         <td>@Html.DisplayFor(modelItem => item.CashDonations)</td>

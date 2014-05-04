@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Capstone.Domain.Concrete
 {
@@ -19,7 +20,10 @@ namespace Capstone.Domain.Concrete
 
         public StatsInfo GetStatsInfo(int id)
         {
-            throw new NotImplementedException();
+            var db = new CapstoneDbContext();
+            return (from s in db.StatsInfos.Include("PartnershipNight")
+                    where s.StatsInfoId == id
+                    select s).FirstOrDefault();
         }
 
         public void EditStatsInfo(int id)

@@ -1,12 +1,12 @@
 ﻿@model Capstone.Domain.Entities.StatsInfo
 
 @{
-    ViewBag.Title = "EditStats";
+    ViewBag.Title = "Admin: Edit " + @Model.partnershipNight.Date.ToShortDateString();
 }
 
-<h2>Edit Stats Info for @Model.StatsInfoId</h2>
+<h2>Edit Stats Info for @Model.partnershipNight.Date.ToShortDateString()</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("EditStats", "AdminStats"))
 {
     @Html.EditorForModel()
     <input type ="submit" value ="Save" />
