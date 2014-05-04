@@ -14,28 +14,46 @@
         {
             <div class="Message">@TempData["message"]</div>
         }
-    <div class="Message">temp data will be here</div>
+    @*<div class="Message">Temp data will be here</div>*@
 
 
-    <div id="header">
-        <div class="title">Title of page, e.g. Create New User</div>
+    <div id="Header">
+        Title of page, e.g. Create New User
     </div>
 
     <div id="BreadCrumb">
-
-    @Html.MvcSiteMap().Menu()
-    @Html.MvcSiteMap().SiteMapPath()
-        </div>
-
-
-    @*if user == admin, display AdminNavigation partial view
-    Integrate after Security is done*@
-    <div id="categories">
-        @Html.Partial("UserNavigation")
+        @Html.MvcSiteMap().SiteMapPath()
     </div>
 
 
-    <div id="content">
+    
+
+    
+
+    <div id="Navigation">
+
+        <div id="NavTitle">
+            Navigation
+            <br />
+            <br />
+        </div>
+
+        @*if user == admin, display AdminNavigation partial view, Integrate after Security is done*@
+        @Html.Partial("UserNavigation")
+        <br />
+        <br />
+        @Html.Partial("AdminNavigation")
+
+        <div id="SiteMapNav">
+            @Html.MvcSiteMap().Menu()
+        </div>
+
+    </div>
+
+
+    
+
+    <div id="Content">
          @RenderBody()
     </div>
 

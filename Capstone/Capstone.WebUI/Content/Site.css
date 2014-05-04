@@ -64,41 +64,55 @@ textarea {
 /* New
 -----------------------------------------------------------*/
 
-DIV#content {
-     border: 2px solid gray; 
+DIV#Content {
+     border: 2px solid #111; 
      margin-left: 14em; 
      padding: 1em; 
+     border-radius: 10px;
 
 }
 
-DIV#categories {
+DIV#Navigation {
      float: left;
-      width: 12em; 
-      padding: .3em; 
-
+     width: 12em; 
+     padding: .3em; 
+     border: 2px solid #111;
+     border-radius: 10px;
 }
 
 DIV.Message { 
-    background: gray; 
-    color:White; 
-    padding: .2em; 
-    margin-top:.25em;
-    font-size: 24px;
-    color:orange; 
+    background: #D6E8FF;  
+    padding: 14px; 
+    margin-top:4px;
+    color:red; 
+    font: bold 22px "Arial Narrow", "Franklin Gothic Medium", Arial;
+    border: 2px groove red;
 
 }
 
-DIV#header DIV.title, DIV.item H3, DIV.item H4, DIV.pager A {
-    font: bold 1em "Arial Narrow", "Franklin Gothic Medium", Arial;
-}
-DIV#header { 
-    background-color: #444; 
+
+DIV#Header { 
+    background-color: #039; 
     border-bottom: 2px solid #111; 
-    color: White; 
+    border-left: 2px solid #111; 
+    border-right: 2px solid #111; 
+    color: lightgray; 
+    padding: 14px; 
+    font: bold 30px "Arial Narrow", "Franklin Gothic Medium", Arial;
+    text-align: center;
 
 }
-DIV#header DIV.title { 
-    font-size: 2em; 
-    padding: .6em; 
 
+DIV#BreadCrumb {
+    background-color: #EBF3FF; 
+    padding: 6px; 
+    font: bold 14px "Helvetica";
+    margin-bottom: 8px;
 }
+
+DIV#NavTitle {
+    font: bold 18px "Helvetica";
+    /*text-decoration: underline;*/
+    text-align: center;
+}
+
