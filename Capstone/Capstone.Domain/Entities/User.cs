@@ -12,6 +12,7 @@ namespace Capstone.Domain.Entities
     {
         [HiddenInput(DisplayValue = false)]
         public int UserId { get; set; }
+        [Required(ErrorMessage="The user must have a store number")]
         public BvLocation BvLocation { get; set; }
         [Required(ErrorMessage = "Please enter a First Name")]
         public string UserFName { get; set; }
