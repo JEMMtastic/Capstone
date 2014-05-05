@@ -74,7 +74,7 @@ namespace Capstone.Domain.Concrete
             }
             else
             {
-                var dbEntry = db.PartnershipNights.Find(pn);
+                var dbEntry = db.PartnershipNights.Find(pn.PartnershipNightId);
                 if (dbEntry != null)
                 {
                     dbEntry.Date = pn.Date;

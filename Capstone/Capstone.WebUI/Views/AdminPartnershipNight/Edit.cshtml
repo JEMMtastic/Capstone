@@ -1,13 +1,21 @@
-﻿@model Capstone.Domain.Entities.PartnershipNight
+﻿@model Capstone.WebUI.Models.PNightEditViewModel
 @using Capstone.Domain.Entities;
 @{
     ViewBag.Title = "Edit";
 }
 
 <h1>Edit Event </h1>
-<h2>Date: @Model.Date.ToShortDateString()<br /> Charity: @Model.Charity.Name <br /> Store#: @Model.BVLocation.BvStoreNum</h2>
+<h2>Date: @Model.Date.ToShortDateString()<br /> </h2>
+<!-- Commenting out but add these back in when I have time to match the list item names to the id: Charity: Model.Charity.Name <br /> Store#: Model.BVLocation.BvStoreNum -->
+
 @using (Html.BeginForm()) {
-@Html.EditorForModel()
+
+    <p>@Html.EditorFor(m => m.Date)</p>
+    <p>@Html.EditorFor(m => m.CheckRequestId)</p>
+    <p>@Html.EditorFor(m => m.Comments)</p>
+    <p>@Html.EditorFor(m => m.CheckRequestFinished)</p>
+    <p>@Html.EditorFor(m => m.BeforeTheEventFinished)</p>
+    <p>@Html.EditorFor(m => m.AfterTheEventFinished);</p>
 
 <table> <!--NOTE: Used in-line css in lieu of global css fixes -->
     <tr>
@@ -15,9 +23,9 @@
     </tr>
     <tr>
         <td>
-            @if(Session["charities"] != null){ 
-                @Html.DropDownListFor(m => m.Charity.CharityId, new SelectList((List<Charity>)Session["charities"], "CharityId", "Name"));
-                @Html.HiddenFor(x => x.Charity.CharityId)
+            @if(Model.Charities != null){ 
+                @Html.DropDownListFor(m => m.CharityId, new SelectList(Model.Charities, "CharityId", "Name"));
+                @Html.HiddenFor(x => x.CharityId)
             }
         </td>
     </tr>
@@ -26,9 +34,9 @@
     </tr>
     <tr>
         <td>
-            @if(Session["bvlocations"] != null){
-                @Html.DropDownListFor(m => m.BVLocation.BvLocationId, new SelectList((List<BvLocation>)Session["bvlocations"], "BvLocationId", "BvStoreNum"));
-                @Html.HiddenFor(x => x.BVLocation.BvLocationId) 
+            @if(Model.Locations != null){
+                @Html.DropDownListFor(m => m.BVLocationId, new SelectList(Model.Locations, "BvLocationId", "BvStoreNum"));
+                @Html.HiddenFor(x => x.BVLocationId) 
             }
         </td>
    </tr>
