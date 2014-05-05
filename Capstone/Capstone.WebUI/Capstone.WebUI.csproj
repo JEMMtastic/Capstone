@@ -269,6 +269,7 @@
     <Content Include="Views\AdminLoc\EditLoc.cshtml" />
     <Content Include="Views\AdminPartnershipNight\Index.cshtml" />
     <Content Include="Views\AdminPartnershipNight\Edit.cshtml" />
+    <Content Include="Views\Home\Calculator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
