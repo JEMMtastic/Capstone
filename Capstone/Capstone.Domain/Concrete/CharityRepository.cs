@@ -36,6 +36,13 @@ namespace Capstone.Domain.Concrete
                     select charity).FirstOrDefault();
         }*/
 
+        public IQueryable<Charity> GetCharities()
+        {
+            var db = new CapstoneDbContext();
+            return (from charity in db.Charities
+                    select charity).AsQueryable<Charity>();
+        }
+
         //Aka save/update charity
         public void EditCharity(Charity charity)
         {

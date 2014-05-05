@@ -21,10 +21,14 @@ namespace Capstone.Domain.Entities
         public string City { get; set; }
         
         [Required(ErrorMessage="Please enter a zip code.")]
+        [DataType(DataType.PostalCode)]
         public string Zip { get; set; }
         
         [Required(ErrorMessage="Please enter a phone number.")]
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
+
+        //NOTE: Should we add email?
         
         [Required(ErrorMessage="Please enter the FederalTaxId.")]
         public string FederalTaxId { get; set; }

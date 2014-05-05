@@ -10,6 +10,7 @@ namespace Capstone.Domain.Abstract
     public interface BvLocationInterface
     {
          BvLocation GetBvLocation(int locId);
+         IQueryable<BvLocation> GetBvLocations();
          void AddBvLocation(BvLocation bvLocation);
          BvLocation DeleteBvLocation(int bvLocationId);
          void SaveBvLocation(BvLocation l);

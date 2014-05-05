@@ -1,0 +1,39 @@
+﻿@model Capstone.Domain.Entities.PartnershipNight
+@using Capstone.Domain.Entities;
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h1>Edit Event </h1>
+<h2>Date: @Model.Date.ToShortDateString()<br /> Charity: @Model.Charity.Name <br /> Store#: @Model.BVLocation.BvStoreNum</h2>
+@using (Html.BeginForm()) {
+@Html.EditorForModel()
+
+<table> <!--NOTE: Used in-line css in lieu of global css fixes -->
+    <tr>
+        <th style="text-align:left;">Charity</th>
+    </tr>
+    <tr>
+        <td>
+            @if(Session["charities"] != null){ 
+                @Html.DropDownListFor(m => m.Charity.CharityId, new SelectList((List<Charity>)Session["charities"], "CharityId", "Name"));
+                @Html.HiddenFor(x => x.Charity.CharityId)
+            }
+        </td>
+    </tr>
+    <tr>
+        <th style="text-align:left;">BV Location</th>
+    </tr>
+    <tr>
+        <td>
+            @if(Session["bvlocations"] != null){
+                @Html.DropDownListFor(m => m.BVLocation.BvLocationId, new SelectList((List<BvLocation>)Session["bvlocations"], "BvLocationId", "BvStoreNum"));
+                @Html.HiddenFor(x => x.BVLocation.BvLocationId) 
+            }
+        </td>
+   </tr>
+</table>
+    <br />
+        <input type="submit" value="Save" />
+@Html.ActionLink("Cancel and return to List", "Index")
+}

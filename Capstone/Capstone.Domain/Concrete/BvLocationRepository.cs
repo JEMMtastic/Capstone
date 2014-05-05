@@ -19,6 +19,13 @@ namespace Capstone.Domain.Concrete
                     select l).FirstOrDefault();
         }
 
+        public IQueryable<BvLocation> GetBvLocations()
+        {
+            var db = new CapstoneDbContext();
+            return (from l in db.BvLocations
+                    select l).AsQueryable<BvLocation>();
+        }
+
         public void AddBvLocation(BvLocation bvLocation)
         {
             var db = new CapstoneDbContext();

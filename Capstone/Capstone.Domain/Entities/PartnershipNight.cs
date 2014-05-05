@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.Mvc.Html;
 
 namespace Capstone.Domain.Entities
 {
@@ -26,6 +27,7 @@ namespace Capstone.Domain.Entities
 
         [HiddenInput(DisplayValue = false)]
         public int PartnershipNightId { get; set; }
+        //NOTE: Should we add another id to identify each partnership night apart from the database row
 
         [Required(ErrorMessage="Please enter a date for the event.")]
         public DateTime Date { get; set; }
@@ -39,6 +41,7 @@ namespace Capstone.Domain.Entities
         //NOTE: Should this be a hidden input?
         public int CheckRequestId { get; set; } //Not required when the event is first created
 
+        [DataType(DataType.MultilineText)]
         public string Comments { get; set; } // Optional
 
         public bool CheckRequestFinished { 
