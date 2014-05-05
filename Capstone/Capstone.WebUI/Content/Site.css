@@ -118,3 +118,10 @@ DIV#NavTitle {
     text-align: center;
 }
 
+DIV#SplashWrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -255px;
+}

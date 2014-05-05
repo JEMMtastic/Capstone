@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+    <style>
+        body {
+            background-color: #d6e8ff;
+        }
+    </style>
+    <title>Partnerships</title>
+</head>
+<body>
+    <div id="SplashWrapper">
+
+        <img src="~/Images/splashGraphic.png" width="510" height="147" /><br />
+        <table>
+            <tr>
+                <td>@Html.TextBox("username", "", new { style="width:200px" })</td>
+                <td>@Html.TextBox("password", "", new { style = "width:200px" })</td>
+                <td>Login Button</td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td>Password</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">Forgot username or password?</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

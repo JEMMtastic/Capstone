@@ -71,5 +71,10 @@ namespace Capstone.WebUI.Controllers
             return View();
         }
 
+        public ActionResult SplashTest()
+        {
+            return View();
+        }
+
     }
 }
