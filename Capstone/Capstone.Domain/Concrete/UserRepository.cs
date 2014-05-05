@@ -54,15 +54,7 @@ namespace Capstone.Domain.Concrete
                     dbEntry.UserEmail = u.UserEmail;
                     dbEntry.PhoneNumber = u.PhoneNumber;
                     dbEntry.AccessLevel = u.AccessLevel;
-                    if (dbEntry.BvLocation != null)
-                    {
-                        u.BvLocation = db.BvLocations.Find(u.BvLocation.BvStoreNum);
-                        dbEntry.BvLocation = u.BvLocation;
-                    }
-                    else
-                    {
-                        u.BvLocation = null;
-                    }
+                    dbEntry.BvLocation = u.BvLocation;
                 }
 
             }

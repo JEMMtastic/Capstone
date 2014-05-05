@@ -12,17 +12,20 @@ namespace Capstone.WebUI.Controllers
     public class AdminUserController : Controller
     { 
         UserInterface uRepo;
+        BvLocationInterface lRepo;
 
         // The default constructor is called by the framework
         public AdminUserController()
         {
             uRepo = new UserRepository();
+            lRepo = new BvLocationRepository();
         }
 
         // Use this for dependency injection
-        public AdminUserController(UserInterface iUser)
+        public AdminUserController(UserInterface iUser, BvLocationInterface iLocation)
         {
             uRepo = iUser;
+            lRepo = iLocation;
         }
 
         public ActionResult AdminUserIndex()
@@ -47,8 +50,17 @@ namespace Capstone.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                uRepo.SaveUser(u);
-                TempData["message"] = string.Format("{0} has been saved", u.UserId);
+                BvLocation l = lRepo.GetBvLocation(u.BvLocation.BvStoreNum);
+                if (l != null)
+                {
+                    u.BvLocation = l;
+                    uRepo.SaveUser(u);
+                    TempData["message"] = string.Format("{0} has been saved", u.UserFName + " " + u.UserLName);
+                }
+                else
+                {
+                    TempData["message"] = string.Format("{0} is not a valid Restaurant", u.BvLocation.BvStoreNum);
+                }
                 return RedirectToAction("AdminUserIndex");
             }
             else

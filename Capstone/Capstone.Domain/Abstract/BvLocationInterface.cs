@@ -13,6 +13,7 @@ namespace Capstone.Domain.Abstract
          IQueryable<BvLocation> GetBvLocations();
          void AddBvLocation(BvLocation bvLocation);
          BvLocation DeleteBvLocation(int bvLocationId);
+         BvLocation GetBvLocation(string storeNum);
          void SaveBvLocation(BvLocation l);
     }
 }
