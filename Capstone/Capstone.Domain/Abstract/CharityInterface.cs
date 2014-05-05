@@ -14,6 +14,6 @@ namespace Capstone.Domain.Abstract
         //Charity GetCharityById(int id); //Get charity by id if necessary
         IQueryable<Charity> GetCharities(); //Gets all charities
         void EditCharity(Charity charity); //Saves updated charity in db
-        Charity DeleteCharity(Charity charity); //Returns charity that was deleted for display and confirmation
+        Charity DeleteCharity(int charityId); //Returns charity that was deleted for display and confirmation
     }
 }

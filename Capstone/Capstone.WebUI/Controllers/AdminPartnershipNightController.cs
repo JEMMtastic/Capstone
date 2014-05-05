@@ -31,9 +31,9 @@ namespace Capstone.WebUI.Controllers
             return View(pnightEvents);
         }
 
-        public ActionResult Create()
+        public ViewResult Create()
         {
-            return View();
+            return View("Edit", new PNightEditViewModel());
         }
 
         public ActionResult Edit(int partnershipNightId)
@@ -97,10 +97,16 @@ namespace Capstone.WebUI.Controllers
             }
         }
 
-        public ActionResult Delete()
+        [HttpPost]
+        public ActionResult Delete(int pnightId)
         {
-            return View();
+            PartnershipNight deletedPNight = pnRepo.DeletePartnershipNight(pnightId);
+            if (deletedPNight != null)
+            {
+                TempData["message"] = string.Format("Event on {0} was deleted",
+                deletedPNight.Date.ToShortDateString());
+            }
+            return RedirectToAction("Index");
         }
-
     }
 }

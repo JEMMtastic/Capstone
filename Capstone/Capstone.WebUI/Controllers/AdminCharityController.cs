@@ -1,4 +1,5 @@
 ﻿using Capstone.Domain.Concrete;
+using Capstone.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,32 +10,59 @@ namespace Capstone.WebUI.Controllers
 {
     public class AdminCharityController : Controller
     {
-        //
-        // GET: /AdminCharity/
+        CharityRepository charRepo;
 
         public AdminCharityController()
         {
-            CharityRepository charRepo = new CharityRepository();
+            charRepo = new CharityRepository();
         }
 
         public ActionResult Index()
         {
-            return View();
+            List<Charity> charities = charRepo.GetCharities().ToList<Charity>();
+
+            return View(charities);
         }
 
-        /*public ActionResult AddCharity()
+        public ActionResult Create()
         {
-
+            return View("Edit", new Charity());
         }
 
-        public ActionResult UpdateCharity()
+        public ActionResult Edit(int charityId)
         {
-
+            // Get the correct charity
+            Charity charity = charRepo.GetCharities().FirstOrDefault(ch => ch.CharityId == charityId);
+            
+            return View(charity);
         }
 
-        public ActionResult DeleteCharity()
+        [HttpPost]
+        public ActionResult Edit(Charity charity)
         {
+            if (ModelState.IsValid)
+            {
+                // Save the changes to the partnership night 
+                charRepo.EditCharity(charity);
+                TempData["message"] = string.Format("{0} has been saved", charity.Name);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                // there is something wrong with the data values
+                return View(charity);
+            }
+        }
 
-        }*/
+        public ActionResult Delete(int charityId)
+        {
+            Charity deletedCharity = charRepo.DeleteCharity(charityId);
+            if (deletedCharity != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted",
+                deletedCharity.Name);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

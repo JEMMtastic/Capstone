@@ -272,6 +272,8 @@
     <Content Include="Views\AdminPartnershipNight\Edit.cshtml" />
     <Content Include="Views\Home\Calculator.cshtml" />
     <Content Include="Views\Home\SplashTest.cshtml" />
+    <Content Include="Views\AdminCharity\Index.cshtml" />
+    <Content Include="Views\AdminCharity\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

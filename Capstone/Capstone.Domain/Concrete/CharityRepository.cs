@@ -11,7 +11,7 @@ namespace Capstone.Domain.Concrete
     public class CharityRepository : CharityInterface
     {
 
-        public void AddCharity(Entities.Charity charity)
+        public void AddCharity(Charity charity)
         {
             var db = new CapstoneDbContext();
             db.Charities.Add(charity);
@@ -70,10 +70,10 @@ namespace Capstone.Domain.Concrete
             db.SaveChanges();
         }
 
-        public Charity DeleteCharity(Charity charity)  //If we decide not to allow deletion we can take this out later
+        public Charity DeleteCharity(int charityId)  //If we decide not to allow deletion we can take this out later
         {
             var db = new CapstoneDbContext();
-            Charity dbEntry = db.Charities.Find(charity);
+            Charity dbEntry = db.Charities.Find(charityId);
             if (dbEntry != null)
             {
                 db.Charities.Remove(dbEntry);
