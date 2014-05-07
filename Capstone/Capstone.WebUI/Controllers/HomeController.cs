@@ -88,5 +88,10 @@ namespace Capstone.WebUI.Controllers
             return View();
         }
 
+        public ViewResult Empty()
+        {
+            return View();
+        }
+
     }
 }
