@@ -343,7 +343,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Splash.cshtml" />
     <Content Include="Views\AdminUser\AdminUserIndex.cshtml" />
     <Content Include="Views\AdminLoc\AdminLocIndex.cshtml" />
     <Content Include="Views\Shared\UserNavigation.cshtml" />
@@ -364,7 +364,7 @@
     <Content Include="Views\AdminPartnershipNight\Index.cshtml" />
     <Content Include="Views\AdminPartnershipNight\Edit.cshtml" />
     <Content Include="Views\Home\Calculator.cshtml" />
-    <Content Include="Views\Home\SplashTest.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\AdminCharity\Index.cshtml" />
     <Content Include="Views\AdminCharity\Edit.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
