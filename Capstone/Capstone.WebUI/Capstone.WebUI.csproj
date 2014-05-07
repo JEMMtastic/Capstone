@@ -213,6 +213,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\splashGraphic.png" />
     <Content Include="Mvc.sitemap">
       <SubType>Designer</SubType>
     </Content>
