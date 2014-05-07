@@ -343,7 +343,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Splash.cshtml" />
+    <Content Include="Views\Home\Empty.cshtml" />
     <Content Include="Views\AdminUser\AdminUserIndex.cshtml" />
     <Content Include="Views\AdminLoc\AdminLocIndex.cshtml" />
     <Content Include="Views\Shared\UserNavigation.cshtml" />
