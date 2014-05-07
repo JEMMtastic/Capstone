@@ -58,11 +58,16 @@ namespace Capstone.WebUI.Controllers
             StatsInfo s1 = new StatsInfo { AmountOfTotalSalesToCharity = 25.88M, CashDonations = 19.83M, GuestCount = 10, TotalSales = 100.00M, partnershipNight = pn1 };
             sRepo.AddStatsInfo(s1);
           */
+
+            //testing
+            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
             return View();
         }
 
         public ActionResult About()
         {
+            //testing
+            ViewBag.Message = "Your app description page.";
             return View();
         }
 
@@ -73,6 +78,13 @@ namespace Capstone.WebUI.Controllers
 
         public ActionResult SplashTest()
         {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            //testing
+            ViewBag.Message = "Your contact page.";
             return View();
         }
 

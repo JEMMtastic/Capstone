@@ -1,13 +1,52 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model FormsAuthenticationTest.Models.LoginModel
+
+@{
+    Layout = null;
 }
 
-<h2>Information displayed, e.g. Form for new user info</h2>
+<!DOCTYPE html>
 
-box<br />
-box<br />
-box<br />
-box<br />
-box<br />
-box<br />
-box<br />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+    <style>
+        body {
+            background-color: #d6e8ff;
+        }
+    </style>
+    <title>Partnerships</title>
+</head>
+<body>
+    <div id="SplashWrapper">
+
+        <img src="~/Images/splashGraphic.png" width="510" height="147" /><br />
+        
+ @{ 
+        <table>
+            <tr>
+       @{/*       <td>@Html.TextBoxFor("username", "", new { style="width:200px" })</td>
+                <td>@Html.TextBoxFor("password", "", new { style = "width:200px" })</td>*/}
+                
+                <td>@Html.TextBoxFor(m => m.UserName)</td>
+                <td>@Html.TextBoxFor(m => m.Password)</td>
+                <td><button type="submit">Login</button></td>
+                <td style="text-align:right;">Register</td> 
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td>Password</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align:right;">@Html.CheckBoxFor(m => m.RememberMe) Remember Me</td>
+            </tr>
+            <tr>
+                <td colspan="4">@Html.ActionLink("Forgot username or password?", "Forgot", "Account")</td>
+            </tr>
+        </table>
+    }
+    </div>
+</body>
+</html>
