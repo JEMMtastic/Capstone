@@ -25,8 +25,8 @@
         {
         <table>
             <tr>
-                <td>@Html.TextBoxFor(m => m.UserName)</td>
-                <td>@Html.TextBoxFor(m => m.Password)</td>
+                <td>@Html.TextBoxFor(m => m.UserName, new { style = "width:200px" })</td>
+                <td>@Html.TextBoxFor(m => m.Password, new { style = "width:200px" })</td>
                 <td><button type="submit">Login</button></td>
                 <td style="text-align:right;">Register</td> 
             </tr>
