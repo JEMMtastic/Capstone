@@ -104,6 +104,10 @@
     <Compile Include="Migrations\201405101729363_ByebyeStatsInfo.Designer.cs">
       <DependentUpon>201405101729363_ByebyeStatsInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405101751168_Section4-Cleanup.cs" />
+    <Compile Include="Migrations\201405101751168_Section4-Cleanup.Designer.cs">
+      <DependentUpon>201405101751168_Section4-Cleanup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -135,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405101729363_ByebyeStatsInfo.resx">
       <DependentUpon>201405101729363_ByebyeStatsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405101751168_Section4-Cleanup.resx">
+      <DependentUpon>201405101751168_Section4-Cleanup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

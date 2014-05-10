@@ -21,9 +21,7 @@ namespace Capstone.Domain.Concrete
 
         public Section4 GetSection4(int id)
         {
-            return (from s in db.Section4s.Include("PartnershipNight")
-                    where s.Section4Id == id
-                    select s).FirstOrDefault();
+            throw new NotImplementedException();
         }
 
         public IQueryable<Section4> Section4s
@@ -33,30 +31,7 @@ namespace Capstone.Domain.Concrete
 
         public void SaveSection4(Section4 s)
         {
-            if (s.Section4Id == 0)
-                db.Section4s.Add(s);
-            else
-            {
-                Section4 dbEntry = db.Section4s.Find(s.Section4Id);
-                if (dbEntry != null)
-                {
-                    dbEntry.TotalSales = s.TotalSales;
-                    dbEntry.AmountOfTotalSalesToCharity = s.AmountOfTotalSalesToCharity;
-                    dbEntry.CashDonations = s.CashDonations;
-                    dbEntry.GuestCount = s.GuestCount;
-                    dbEntry.partnershipNight = s.partnershipNight;
-                    if (dbEntry.partnershipNight != null)
-                    {
-                        s.partnershipNight = db.PartnershipNights.Find(s.partnershipNight.PartnershipNightId);
-                        dbEntry.partnershipNight = s.partnershipNight;
-                    }
-                    else
-                    {
-                        s.partnershipNight = null;
-                    }
-                }
-            }
-            db.SaveChanges();
+            throw new NotImplementedException();
         }
 
         public Section4 DeleteSection4(int section4Id)
@@ -69,5 +44,6 @@ namespace Capstone.Domain.Concrete
             }
             return dbEntry;
         }
+
     }
 }

@@ -12,20 +12,5 @@ namespace Capstone.Domain.Entities
     {
         [HiddenInput(DisplayValue = false)]
         public int Section4Id { get; set; }
-
-        [Required(ErrorMessage = "Please enter the total sales.")]
-        public decimal TotalSales { get; set; }
-
-        [Required(ErrorMessage = "Please enter the amount of total sales to charity.")]
-        public decimal AmountOfTotalSalesToCharity { get; set; }
-
-        [Required(ErrorMessage = "Please enter the cash donations.")]
-        public decimal CashDonations { get; set; }
-
-        [Required(ErrorMessage = "Please enter the guest count.")]
-        public int GuestCount { get; set; }
-
-        [Required(ErrorMessage = "Please enter the partnership night.")]
-        public PartnershipNight partnershipNight { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace Capstone.WebUI.Controllers
         public ViewResult Index()
         {
             var db = new CapstoneDbContext();
-            List<Section4> section4 = (from s in db.Section4s.Include("PartnershipNight")
+            List<Section4> section4 = (from s in db.Section4s
                                         select s).ToList<Section4>();
             return View(section4);
         }

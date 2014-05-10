@@ -11,23 +11,13 @@
 </p>
 <table>
     <tr>
-        <th>Date</th>
-        <th>Charity</th>
-        <th>Total Sales</th>
-        <th>Sales to Charity</th>
-        <th>Cash donations</th>
-        <th>Guest Count</th>
-        <th>Actions</th>
+        <th>asdf</th>
+
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>@Html.ActionLink(item.partnershipNight.Date.ToShortDateString(), "EditSection4", "AdminSection4", new { item.Section4Id }, null)</td>
-@*        <td>@Html.DisplayFor(ModelItem => item.partnershipNight.Charity.Name)</td>
-        <td>@Html.DisplayFor(modelItem => item.TotalSales)</td>
-        <td>@Html.DisplayFor(modelItem => item.AmountOfTotalSalesToCharity)</td>
-        <td>@Html.DisplayFor(modelItem => item.CashDonations)</td>
-        <td>@Html.DisplayFor(modelItem => item.GuestCount)</td>*@
+        <td>asdf</td>
         <td>
             @using (Html.BeginForm("DeleteSection4", "AdminSection4", new { item.Section4Id }))
             {
