@@ -9,35 +9,35 @@ using System.Web.Mvc;
 
 namespace Capstone.Domain.Concrete
 {
-    public class StatsInfoRepository : StatsInfoInterface
+    public class Section4Repository : Section4Interface
     {
         CapstoneDbContext db = new CapstoneDbContext();
 
-        public void AddStatsInfo(StatsInfo s)
+        public void AddSection4(Section4 s)
         {
-            db.StatsInfos.Add(s);
+            db.Section4s.Add(s);
             db.SaveChanges();
         }
 
-        public StatsInfo GetStatsInfo(int id)
+        public Section4 GetSection4(int id)
         {
-            return (from s in db.StatsInfos.Include("PartnershipNight")
-                    where s.StatsInfoId == id
+            return (from s in db.Section4s.Include("PartnershipNight")
+                    where s.Section4Id == id
                     select s).FirstOrDefault();
         }
 
-        public IQueryable<StatsInfo> StatsInfos
+        public IQueryable<Section4> Section4s
         {
-            get { return db.StatsInfos; }
+            get { return db.Section4s; }
         }
 
-        public void SaveStatsInfo(StatsInfo s)
+        public void SaveSection4(Section4 s)
         {
-            if (s.StatsInfoId == 0)
-                db.StatsInfos.Add(s);
+            if (s.Section4Id == 0)
+                db.Section4s.Add(s);
             else
             {
-                StatsInfo dbEntry = db.StatsInfos.Find(s.StatsInfoId);
+                Section4 dbEntry = db.Section4s.Find(s.Section4Id);
                 if (dbEntry != null)
                 {
                     dbEntry.TotalSales = s.TotalSales;
@@ -59,12 +59,12 @@ namespace Capstone.Domain.Concrete
             db.SaveChanges();
         }
 
-        public StatsInfo DeleteStatsInfo(int statsInfoId)
+        public Section4 DeleteSection4(int section4Id)
         {
-            StatsInfo dbEntry = db.StatsInfos.Find(statsInfoId);
+            Section4 dbEntry = db.Section4s.Find(section4Id);
             if (dbEntry != null)
             {
-                db.StatsInfos.Remove(dbEntry);
+                db.Section4s.Remove(dbEntry);
                 db.SaveChanges();
             }
             return dbEntry;

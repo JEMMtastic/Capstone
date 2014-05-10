@@ -15,7 +15,7 @@ namespace Capstone.WebUI.Controllers
         UserInterface uRepo;
         CharityInterface cRepo;
         BvLocationInterface lRepo;
-        StatsInfoInterface sRepo;
+        Section4Interface sRepo;
 
         // The default constructor is called by the framework
         public HomeController()
@@ -24,18 +24,18 @@ namespace Capstone.WebUI.Controllers
             pnRepo = new PartnershipNightRepository();
             cRepo = new CharityRepository();
             lRepo = new BvLocationRepository();
-            sRepo = new StatsInfoRepository();
+            sRepo = new Section4Repository();
 
         }
 
         // Use this for dependency injection
-        public HomeController(UserInterface iUser, PartnershipNightInterface iPn, CharityInterface iChar, BvLocationInterface iLoc, StatsInfoInterface iStats)
+        public HomeController(UserInterface iUser, PartnershipNightInterface iPn, CharityInterface iChar, BvLocationInterface iLoc, Section4Interface iSection4)
         {
             uRepo = iUser;
             pnRepo = iPn;
             cRepo = iChar;
             lRepo = iLoc;
-            sRepo = iStats;
+            sRepo = iSection4;
         }
 
         public ActionResult Index()

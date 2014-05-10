@@ -1,13 +1,13 @@
-﻿@model IEnumerable<Capstone.Domain.Entities.StatsInfo>
+﻿@model IEnumerable<Capstone.Domain.Entities.Section4>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Stats Info</h2>
+<h2>Section4 Info</h2>
 
 <p>
-    @Html.ActionLink("Create New", "CreateStatsInfo")
+    @Html.ActionLink("Create New", "CreateSection4Info")
 </p>
 <table>
     <tr>
@@ -22,14 +22,14 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>@Html.ActionLink(item.partnershipNight.Date.ToShortDateString(), "EditStats", "AdminStats", new { item.StatsInfoId }, null)</td>
-        <td>@Html.DisplayFor(ModelItem => item.partnershipNight.Charity.Name)</td>
+        <td>@Html.ActionLink(item.partnershipNight.Date.ToShortDateString(), "EditSection4", "AdminSection4", new { item.Section4Id }, null)</td>
+@*        <td>@Html.DisplayFor(ModelItem => item.partnershipNight.Charity.Name)</td>
         <td>@Html.DisplayFor(modelItem => item.TotalSales)</td>
         <td>@Html.DisplayFor(modelItem => item.AmountOfTotalSalesToCharity)</td>
         <td>@Html.DisplayFor(modelItem => item.CashDonations)</td>
-        <td>@Html.DisplayFor(modelItem => item.GuestCount)</td>
+        <td>@Html.DisplayFor(modelItem => item.GuestCount)</td>*@
         <td>
-            @using (Html.BeginForm("DeleteStatsInfo", "AdminStats", new { item.StatsInfoId }))
+            @using (Html.BeginForm("DeleteSection4", "AdminSection4", new { item.Section4Id }))
             {
                <input type ="submit" value ="Delete" />
             }

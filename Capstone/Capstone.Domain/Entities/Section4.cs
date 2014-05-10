@@ -8,10 +8,10 @@ using System.Web.Mvc;
 
 namespace Capstone.Domain.Entities
 {
-    public class StatsInfo
+    public class Section4
     {
         [HiddenInput(DisplayValue = false)]
-        public int StatsInfoId { get; set; }
+        public int Section4Id { get; set; }
 
         [Required(ErrorMessage = "Please enter the total sales.")]
         public decimal TotalSales { get; set; }

@@ -59,18 +59,18 @@
     <Compile Include="Abstract\BvLocationInterface.cs" />
     <Compile Include="Abstract\CharityInterface.cs" />
     <Compile Include="Abstract\PartnershipNightInterface.cs" />
-    <Compile Include="Abstract\StatsInfoInterface.cs" />
+    <Compile Include="Abstract\Section4Interface.cs" />
     <Compile Include="Abstract\UserInterface.cs" />
     <Compile Include="Concrete\BvLocationRepository.cs" />
     <Compile Include="Concrete\CapstoneDbContext.cs" />
     <Compile Include="Concrete\CharityRepository.cs" />
     <Compile Include="Concrete\PartnershipNightRepository.cs" />
-    <Compile Include="Concrete\StatsInfoRepository.cs" />
+    <Compile Include="Concrete\Section4Repository.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Entities\BvLocation.cs" />
     <Compile Include="Entities\Charity.cs" />
     <Compile Include="Entities\PartnershipNight.cs" />
-    <Compile Include="Entities\StatsInfo.cs" />
+    <Compile Include="Entities\Section4.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201404272350054_InitialCreate.cs" />
     <Compile Include="Migrations\201404272350054_InitialCreate.Designer.cs">
@@ -100,6 +100,10 @@
     <Compile Include="Migrations\201405040603252_UserRequireds.Designer.cs">
       <DependentUpon>201405040603252_UserRequireds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405101729363_ByebyeStatsInfo.cs" />
+    <Compile Include="Migrations\201405101729363_ByebyeStatsInfo.Designer.cs">
+      <DependentUpon>201405101729363_ByebyeStatsInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405040603252_UserRequireds.resx">
       <DependentUpon>201405040603252_UserRequireds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405101729363_ByebyeStatsInfo.resx">
+      <DependentUpon>201405101729363_ByebyeStatsInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

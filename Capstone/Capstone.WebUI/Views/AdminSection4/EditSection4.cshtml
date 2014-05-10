@@ -1,0 +1,19 @@
+﻿@model Capstone.Domain.Entities.Section4
+
+@{
+    ViewBag.Title = "Admin: Edit ";
+}
+
+<h2>Edit Section4 Info for </h2>
+
+@using (Html.BeginForm("EditSection4", "AdminSection4"))
+{
+    <p>Date</p>
+    //@Html.EditorFor(x => Model.partnershipNight.Date.ToShortDateString())
+    <p>Charity</p>
+    //@Html.EditorFor(x => Model.partnershipNight.Charity.Name)
+    @Html.EditorForModel()
+   
+    <input type ="submit" value ="Save" />
+    @Html.ActionLink("Cancel and return to List", "Index", "AdminSection4")
+}
