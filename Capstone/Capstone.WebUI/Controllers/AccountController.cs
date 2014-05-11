@@ -10,6 +10,8 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using FormsAuthenticationTest.Filters;
 using FormsAuthenticationTest.Models;
+using Capstone.WebUI.Infrastructure.Abstract;
+using Capstone.WebUI.Infrastructure.Concrete;
 
 namespace FormsAuthenticationTest.Controllers
 {
@@ -17,8 +19,19 @@ namespace FormsAuthenticationTest.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
-        //
-        // GET: /Account/Login
+        //IAuthProvider is an example from my project last term. 
+        /*
+        IAuthProvider authProvider;
+
+        public AccountController()
+        {
+            authProvider = new FormsAuthProvider();
+        }
+        public AccountController(IAuthProvider auth)
+        {
+            authProvider = auth;
+        }*/
+
 
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
