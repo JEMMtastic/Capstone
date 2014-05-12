@@ -74,6 +74,7 @@
     <Compile Include="Entities\BvLocation.cs" />
     <Compile Include="Entities\Charity.cs" />
     <Compile Include="Entities\PartnershipNight.cs" />
+    <Compile Include="Entities\Section01.cs" />
     <Compile Include="Entities\Section3.cs" />
     <Compile Include="Entities\Section4.cs" />
     <Compile Include="Entities\Section5.cs" />
