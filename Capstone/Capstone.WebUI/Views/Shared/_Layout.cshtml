@@ -10,7 +10,7 @@
     <script src ="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 </head>
 <body>
-
+    @RenderSection("scripts", required: false)
     
 
     @if (TempData["message"] != null) 
