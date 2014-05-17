@@ -16,6 +16,5 @@ namespace Capstone.Domain.Concrete
         public DbSet<PartnershipNight> PartnershipNights { get; set; }
         public DbSet<Section3> Section3s { get; set; }
         public DbSet<Section4> Section4s { get; set; }
-        public DbSet<Section5> Section5s { get; set; }
     }
 }

@@ -61,7 +61,6 @@
     <Compile Include="Abstract\PartnershipNightInterface.cs" />
     <Compile Include="Abstract\Section3Interface.cs" />
     <Compile Include="Abstract\Section4Interface.cs" />
-    <Compile Include="Abstract\Section5Interface.cs" />
     <Compile Include="Abstract\UserInterface.cs" />
     <Compile Include="Concrete\BvLocationRepository.cs" />
     <Compile Include="Concrete\CapstoneDbContext.cs" />
@@ -69,7 +68,6 @@
     <Compile Include="Concrete\PartnershipNightRepository.cs" />
     <Compile Include="Concrete\Section3Repository.cs" />
     <Compile Include="Concrete\Section4Repository.cs" />
-    <Compile Include="Concrete\Section5Repository.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Entities\BvLocation.cs" />
     <Compile Include="Entities\Charity.cs" />
@@ -77,7 +75,6 @@
     <Compile Include="Entities\Section01.cs" />
     <Compile Include="Entities\Section3.cs" />
     <Compile Include="Entities\Section4.cs" />
-    <Compile Include="Entities\Section5.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201404272350054_InitialCreate.cs" />
     <Compile Include="Migrations\201404272350054_InitialCreate.Designer.cs">
@@ -123,6 +120,10 @@
     <Compile Include="Migrations\201405120041024_AddedSection5.Designer.cs">
       <DependentUpon>201405120041024_AddedSection5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405170017241_DeleteSection5.cs" />
+    <Compile Include="Migrations\201405170017241_DeleteSection5.Designer.cs">
+      <DependentUpon>201405170017241_DeleteSection5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -163,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405120041024_AddedSection5.resx">
       <DependentUpon>201405120041024_AddedSection5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405170017241_DeleteSection5.resx">
+      <DependentUpon>201405170017241_DeleteSection5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
