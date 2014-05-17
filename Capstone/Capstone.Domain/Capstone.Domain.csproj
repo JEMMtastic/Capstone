@@ -59,20 +59,20 @@
     <Compile Include="Abstract\BvLocationInterface.cs" />
     <Compile Include="Abstract\CharityInterface.cs" />
     <Compile Include="Abstract\PartnershipNightInterface.cs" />
-    <Compile Include="Abstract\Section3Interface.cs" />
+    <Compile Include="Abstract\FormInterface.cs" />
     <Compile Include="Abstract\Section4Interface.cs" />
     <Compile Include="Abstract\UserInterface.cs" />
     <Compile Include="Concrete\BvLocationRepository.cs" />
     <Compile Include="Concrete\CapstoneDbContext.cs" />
     <Compile Include="Concrete\CharityRepository.cs" />
     <Compile Include="Concrete\PartnershipNightRepository.cs" />
-    <Compile Include="Concrete\Section3Repository.cs" />
+    <Compile Include="Concrete\FormRepository.cs" />
     <Compile Include="Concrete\Section4Repository.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Entities\BvLocation.cs" />
     <Compile Include="Entities\Charity.cs" />
     <Compile Include="Entities\PartnershipNight.cs" />
-    <Compile Include="Entities\Section3.cs" />
+    <Compile Include="Entities\Form.cs" />
     <Compile Include="Entities\Section4.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201404272350054_InitialCreate.cs" />
@@ -127,6 +127,10 @@
     <Compile Include="Migrations\201405170029179_DeleteSection01.Designer.cs">
       <DependentUpon>201405170029179_DeleteSection01.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405170049045_MergeSection3ToForm.cs" />
+    <Compile Include="Migrations\201405170049045_MergeSection3ToForm.Designer.cs">
+      <DependentUpon>201405170049045_MergeSection3ToForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405170029179_DeleteSection01.resx">
       <DependentUpon>201405170029179_DeleteSection01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405170049045_MergeSection3ToForm.resx">
+      <DependentUpon>201405170049045_MergeSection3ToForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

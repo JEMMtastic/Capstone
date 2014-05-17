@@ -1,12 +1,12 @@
-﻿@model Capstone.Domain.Entities.Section3
+﻿@model Capstone.Domain.Entities.Form
 
 @{
     ViewBag.Title = "Edit";
 }
 
-<h1>Edit Section 3, @Model.pNight.Date</h1>
+<h1>Edit Form, @Model.pNight.Date</h1>
 
-@using (Html.BeginForm("Edit", "AdminSection3Controller")) {
+@using (Html.BeginForm("Edit", "AdminFormController")) {
 
     @Html.EditorForModel()
     <input type="submit" value="Save" />

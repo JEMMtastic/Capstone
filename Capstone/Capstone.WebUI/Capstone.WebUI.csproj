@@ -217,7 +217,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminCharityController.cs" />
     <Compile Include="Controllers\AdminLocController.cs" />
-    <Compile Include="Controllers\AdminSection3Controller.cs" />
+    <Compile Include="Controllers\AdminFormController.cs" />
     <Compile Include="Controllers\AdminSection4Controller.cs" />
     <Compile Include="Controllers\AdminPartnershipNightController.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
@@ -381,8 +381,8 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\AdminSection3\Index.cshtml" />
-    <Content Include="Views\AdminSection3\Edit.cshtml" />
+    <Content Include="Views\AdminForm\Index.cshtml" />
+    <Content Include="Views\AdminForm\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

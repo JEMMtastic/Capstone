@@ -8,10 +8,11 @@ using System.Web.Mvc;
 
 namespace Capstone.Domain.Entities
 {
-    public class Section3
+    public class Form
     {
         // Section 0 + 1
-        public PartnershipNight PN { get; set; }
+        //Foreign key for partnership night, so we can keep track of what these stats are for
+        public PartnershipNight pNight { get; set; }
         public bool NewCharity { get; set; }
         public string Purpose { get; set; }
         public string Contact { get; set; }
@@ -62,10 +63,7 @@ namespace Capstone.Domain.Entities
 
         // Section 3
         [HiddenInput(DisplayValue = false)]
-        public int Section3Id {get; set;}
-
-        //Foreign key for partnership night, so we can keep track of what these stats are for
-        public PartnershipNight pNight { get; set; }
+        public int FormId {get; set;}
 
         [Required]
         public decimal Hour4Sales { get; set; }

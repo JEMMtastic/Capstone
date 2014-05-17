@@ -8,44 +8,44 @@ using Capstone.Domain.Entities;
 
 namespace Capstone.Domain.Concrete
 {
-    public class Section3Repository : Section3Interface
+    public class FormRepository : FormInterface
     {
 
-        public void AddSection3(Section3 sec3)
+        public void AddForm(Form sec3)
         {
             var db = new CapstoneDbContext();
 
-            db.Section3s.Add(sec3);
+            db.Forms.Add(sec3);
         }
 
-        public Section3 GetSection3ById(int id)
+        public Form GetFormById(int id)
         {
             var db = new CapstoneDbContext();
 
-            return (from sec3 in db.Section3s
-                    where sec3.Section3Id == id
+            return (from sec3 in db.Forms
+                    where sec3.FormId == id
                     select sec3).FirstOrDefault();
         }
 
-        public IQueryable<Entities.Section3> GetSection3s()
+        public IQueryable<Entities.Form> GetForms()
         {
             var db = new CapstoneDbContext();
 
-            return (from sec3 in db.Section3s
-                    select sec3).AsQueryable<Section3>();
+            return (from sec3 in db.Forms
+                    select sec3).AsQueryable<Form>();
         }
 
-        public void UpdateSection3(Entities.Section3 sec3)
+        public void UpdateForm(Entities.Form sec3)
         {
            var db = new CapstoneDbContext();
 
-           if (sec3.Section3Id == 0)
+           if (sec3.FormId == 0)
            {
-               db.Section3s.Add(sec3);
+               db.Forms.Add(sec3);
            }
            else
            {
-               var dbEntry = db.Section3s.Find(sec3.Section3Id);
+               var dbEntry = db.Forms.Find(sec3.FormId);
                if (dbEntry != null)
                {
                    dbEntry.Hour4Sales = sec3.Hour4Sales;
@@ -65,13 +65,13 @@ namespace Capstone.Domain.Concrete
            }
         }
 
-        public Section3 DeleteSection3(int id)
+        public Form DeleteForm(int id)
         {
             var db = new CapstoneDbContext();
-            var dbEntry = db.Section3s.Find(id);
+            var dbEntry = db.Forms.Find(id);
             if (dbEntry != null)
             {
-                db.Section3s.Remove(dbEntry);
+                db.Forms.Remove(dbEntry);
                 db.SaveChanges();
             }
             return dbEntry;

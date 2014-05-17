@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Capstone.Domain.Entities.Section3>
+﻿@model IEnumerable<Capstone.Domain.Entities.Form>
 
 @{
     ViewBag.Title = "Index";
@@ -89,9 +89,9 @@
             @Html.DisplayFor(modelItem => item.Notes)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Section3Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Section3Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Section3Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.FormId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FormId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FormId })
         </td>
     </tr>
 }
