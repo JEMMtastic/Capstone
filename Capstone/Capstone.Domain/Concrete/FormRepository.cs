@@ -48,16 +48,16 @@ namespace Capstone.Domain.Concrete
                var dbEntry = db.Forms.Find(sec3.FormId);
                if (dbEntry != null)
                {
-                   dbEntry.Hour4Sales = sec3.Hour4Sales;
-                   dbEntry.Hour5Sales = sec3.Hour5Sales;
-                   dbEntry.Hour6Sales = sec3.Hour6Sales;
-                   dbEntry.Hour7Sales = sec3.Hour7Sales;
-                   dbEntry.Hour8Sales = sec3.Hour8Sales;
-                   dbEntry.Hour4GC = sec3.Hour4GC;
-                   dbEntry.Hour5GC = sec3.Hour5GC;
-                   dbEntry.Hour6GC = sec3.Hour6GC;
-                   dbEntry.Hour7GC = sec3.Hour7GC;
-                   dbEntry.Hour8GC = sec3.Hour8GC;
+                   dbEntry.ActualSalesFour = sec3.ActualSalesFour;
+                   dbEntry.ActualSalesFive = sec3.ActualSalesFive;
+                   dbEntry.ActualSalesSix = sec3.ActualSalesSix;
+                   dbEntry.ActualSalesSeven = sec3.ActualSalesSeven;
+                   dbEntry.ActualSalesEight = sec3.ActualSalesEight;
+                   dbEntry.ActualGcFour = sec3.ActualGcFour;
+                   dbEntry.ActualGcFive = sec3.ActualGcFive;
+                   dbEntry.ActualGcSix = sec3.ActualGcSix;
+                   dbEntry.ActualGcSeven = sec3.ActualGcSeven;
+                   dbEntry.ActualGcEight = sec3.ActualGcEight;
                    dbEntry.PosiDonations = sec3.PosiDonations;
                    dbEntry.Notes = sec3.Notes;
                }

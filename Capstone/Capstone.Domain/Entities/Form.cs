@@ -82,28 +82,33 @@ namespace Capstone.Domain.Entities
         // "Overall Average Check" - Average Sales Total / Average Guest Count Total
         #endregion
 
+        #region Section 2 - Scenario Donation Based on Projections
+        public int Scenario1Gc { get; set; }
+        public int Scenario2Gc { get; set; } 
+
+        // "Estimated Guest Count" - Intended guest count * 25%
+        // "3 Week Average Guest Count" - Same as Average Guest Count Total from Section 1
+        // "Targeted Guest Count" - Estimated Gueset Count + 3 Week Average Guest Count
+        // "Estimated Donation" - (Targeted Guest Count * Overall Average Check) * 10%
+        #endregion
+
+        // TODO: Move calculations?
         #region Section 3 - Day of Partnership - Actual Sales & Guest Count Results Per PosiTouch
-        public decimal Hour4Sales { get; set; }
+        public decimal ActualSalesFour { get; set; } // Actual sales for hours 4 thru 8
+        public decimal ActualSalesFive { get; set; }
+        public decimal ActualSalesSix { get; set; }
+        public decimal ActualSalesSeven { get; set; }
+        public decimal ActualSalesEight { get; set; }
+        // "Actual Sales Total" - Sum of Actual Sales for hours 4 thru 8
 
-        public decimal Hour5Sales { get; set; }
+        public int ActualGcFour { get; set; } // Actual guest count for hours 4 thru 8
+        public int ActualGcFive { get; set; }
+        public int ActualGcSix { get; set; }
+        public int ActualGcSeven { get; set; }
+        public int ActualGcEight { get; set; }
+        // "Actual Gueset Count Total" - Sum of Actual Guest Count for hours 4 thru 8
 
-        public decimal Hour6Sales { get; set; }
-
-        public decimal Hour7Sales { get; set; }
-
-        public decimal Hour8Sales { get; set; }
-
-        public int Hour4GC { get; set; }
-
-        public int Hour5GC { get; set; }
-
-        public int Hour6GC { get; set; }
-
-        public int Hour7GC { get; set; }
-
-        public int Hour8GC { get; set; }
-
-        public decimal PosiDonations { get; set; } //entered by user
+        public decimal PosiDonations { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string Notes { get; set; }
@@ -111,7 +116,7 @@ namespace Capstone.Domain.Entities
         //Calculation methods
         public decimal getTotalSales()
         {
-            return (Hour4Sales + Hour5Sales + Hour6Sales + Hour7Sales + Hour8Sales); //sum of all hours' sales for the event
+            return (ActualSalesFour + ActualSalesFive + ActualSalesSix + ActualSalesSeven + ActualSalesEight); //sum of all hours' sales for the event
         }
 
         public decimal getAvgCheck(decimal sales, int gc)
@@ -123,6 +128,27 @@ namespace Capstone.Domain.Entities
         {
             return getTotalSales() * 0.10M;
         } 
+        #endregion
+
+        #region Section 4 - Sales & Guest Count Contribution Calculation
+        // "3 Week Avg Sales Contribution" - Same as Average Sales Total from Section 1 
+        // "Acutal Sales Contribution" - Same as Actual Sales Total from Section 3
+        // "Difference" - (Actual Sales Contribution - 3 Week Avg Sales Contribution)
+        // "Donation" - Same as Total Donation for Check Request from Section 5 * -1
+        // "Sales Contribution" - Sum of the Difference + Donation
+        // "Guest Count 3 Week Avg #" - Same as AvgG from Section 1
+        // "Guest Count Contribution Actual #" - Same as Actual Guest Total from Section 3
+        // "Guest Count Contribution" - Actual Guests - 3 Week Avg
+        #endregion
+
+        // TODO: Decide what to do with the Mail-to radio button
+        #region Section 5 - Donation Check Request
+        // "Donation 10% to GL7700" - Same as 10% Donation from Section 3
+        // "GL Code" - 7700 + Hosting Restaurant number
+        // "Donations at Register to GL2005" - Same as Posi Donations from Section 3
+        // "GL Code" - 2005 + Hosting Restaurant number
+        // "Total Donation for Check Request" - (Actual Sales Totals * 10%) + Posi Donations from Section 3
+        // "Mail to" - Radio button to select whether or not the check is sent to the BV location or the charity. 
         #endregion
     }
 }
