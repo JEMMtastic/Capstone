@@ -10,7 +10,10 @@ namespace Capstone.Domain.Entities
 {
     public class Form
     {
-        #region Section 0
+        [HiddenInput(DisplayValue = false)]
+        public int FormId { get; set; }
+
+        #region Section 0 - Organization Information
         // "Name on check" - Comes from PartnershipNight.Charity.Name
         public string Purpose { get; set; }
         public string Contact { get; set; } // TODO: Add the contact to the partnership
@@ -24,7 +27,7 @@ namespace Capstone.Domain.Entities
         // "Date of Partnership" - PartnershipNight.Date 
         #endregion
         
-        #region Section 1
+        #region Section 1 - Actual Sales Information from Prior Year - 3 Weeks
         public int Wk1Year { get; set; } // Prior Year Week X
         public int Wk2Year { get; set; }
         public int Wk3Year { get; set; }
@@ -79,54 +82,39 @@ namespace Capstone.Domain.Entities
         // "Overall Average Check" - Average Sales Total / Average Guest Count Total
         #endregion
 
-        // Section 3
-        [HiddenInput(DisplayValue = false)]
-        public int FormId {get; set;}
-
-        [Required]
+        #region Section 3 - Day of Partnership - Actual Sales & Guest Count Results Per PosiTouch
         public decimal Hour4Sales { get; set; }
 
-        [Required]
         public decimal Hour5Sales { get; set; }
 
-        [Required]
         public decimal Hour6Sales { get; set; }
-        
-        [Required]
+
         public decimal Hour7Sales { get; set; }
 
-        [Required]
         public decimal Hour8Sales { get; set; }
 
-        [Required]
         public int Hour4GC { get; set; }
 
-        [Required]
         public int Hour5GC { get; set; }
 
-        [Required]
         public int Hour6GC { get; set; }
 
-        [Required]
         public int Hour7GC { get; set; }
 
-        [Required]
         public int Hour8GC { get; set; }
 
-        [Required]
         public decimal PosiDonations { get; set; } //entered by user
 
-        [Required]
         [DataType(DataType.MultilineText)]
         public string Notes { get; set; }
 
         //Calculation methods
-        public decimal getTotalSales() 
+        public decimal getTotalSales()
         {
             return (Hour4Sales + Hour5Sales + Hour6Sales + Hour7Sales + Hour8Sales); //sum of all hours' sales for the event
         }
 
-        public decimal getAvgCheck(decimal sales, int gc) 
+        public decimal getAvgCheck(decimal sales, int gc)
         {
             return sales / gc;  //Divide the hour's sales by the guest count to get the average check amt. for the hour.
         }
@@ -134,6 +122,7 @@ namespace Capstone.Domain.Entities
         public decimal getDonation()
         {
             return getTotalSales() * 0.10M;
-        }
+        } 
+        #endregion
     }
 }
