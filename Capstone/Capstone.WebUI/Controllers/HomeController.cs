@@ -92,5 +92,10 @@ namespace Capstone.WebUI.Controllers
             return View();
         }
 
+        public ViewResult Calendar()
+        {
+            return View();
+        }
+
     }
 }

@@ -227,6 +227,7 @@
     </Compile>
     <Compile Include="Infrastructure\Abstract\IAuthProvider.cs" />
     <Compile Include="Infrastructure\Concrete\FormsAuthProvider.cs" />
+    <Compile Include="Infrastructure\CustomHelpers.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\PNightEditViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -380,6 +381,7 @@
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\AdminForm\Index.cshtml" />
     <Content Include="Views\AdminForm\Edit.cshtml" />
+    <Content Include="Views\Home\Calendar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
