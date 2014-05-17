@@ -45,7 +45,8 @@ namespace Capstone.WebUI.Controllers
             {
                 // Save the changes to the partnership night 
                 formRepo.UpdateForm(f);
-                TempData["message"] = string.Format("Form for Partnership Night {0} has been saved", f.pNight.Date);
+                // TODO: Fix this. Partnership Night was removed from Form class
+                //TempData["message"] = string.Format("Form for Partnership Night {0} has been saved", f.pNight.Date);
                 return RedirectToAction("Index");
             }
             else
@@ -60,8 +61,9 @@ namespace Capstone.WebUI.Controllers
             Form deletedForm = formRepo.DeleteForm(formId);
             if (deletedForm != null)
             {
-                TempData["message"] = string.Format("Form for Partnership Night {0} was deleted",
-                deletedForm.pNight.Date);
+                // TODO: Fix this. Partnership Night was removed from Form class
+                //TempData["message"] = string.Format("Form for Partnership Night {0} was deleted",
+                //deletedForm.pNight.Date);
             }
             return RedirectToAction("Index");
         }

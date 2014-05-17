@@ -132,6 +132,10 @@
     <Compile Include="Migrations\201405170057117_DeleteSection4.Designer.cs">
       <DependentUpon>201405170057117_DeleteSection4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405170216301_FormAdditions.cs" />
+    <Compile Include="Migrations\201405170216301_FormAdditions.Designer.cs">
+      <DependentUpon>201405170216301_FormAdditions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405170057117_DeleteSection4.resx">
       <DependentUpon>201405170057117_DeleteSection4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405170216301_FormAdditions.resx">
+      <DependentUpon>201405170216301_FormAdditions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
