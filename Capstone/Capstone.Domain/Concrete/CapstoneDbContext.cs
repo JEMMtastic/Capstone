@@ -15,6 +15,5 @@ namespace Capstone.Domain.Concrete
         public DbSet<Charity> Charities { get; set; }
         public DbSet<PartnershipNight> PartnershipNights { get; set; }
         public DbSet<Form> Forms { get; set; }
-        public DbSet<Section4> Section4s { get; set; }
     }
 }

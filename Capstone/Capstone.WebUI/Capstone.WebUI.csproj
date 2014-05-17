@@ -218,7 +218,6 @@
     <Compile Include="Controllers\AdminCharityController.cs" />
     <Compile Include="Controllers\AdminLocController.cs" />
     <Compile Include="Controllers\AdminFormController.cs" />
-    <Compile Include="Controllers\AdminSection4Controller.cs" />
     <Compile Include="Controllers\AdminPartnershipNightController.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -361,8 +360,6 @@
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\AdminUser\EditUser.cshtml" />
-    <Content Include="Views\AdminSection4\Index.cshtml" />
-    <Content Include="Views\AdminSection4\EditSection4.cshtml" />
     <Content Include="Views\AdminLoc\EditLoc.cshtml" />
     <Content Include="Views\AdminPartnershipNight\Index.cshtml" />
     <Content Include="Views\AdminPartnershipNight\Edit.cshtml" />
