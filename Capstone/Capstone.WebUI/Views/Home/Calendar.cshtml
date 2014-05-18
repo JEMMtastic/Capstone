@@ -1,10 +1,11 @@
 ﻿@model Capstone.Domain.Entities.PartnershipNight
-Capstone.WebUI.Infrastructure
+
 @{
     ViewBag.Title = "Calendar";
 }
-
+<script src="~/Scripts/js-calendarFunctions.js"></script>
 <h2>Calendar</h2>
 
-@Html.Calendar(new DateTime(2012, 4, 1));
-
+<script type="text/javascript">
+    calendar("May 1, 2014");
+</script>
