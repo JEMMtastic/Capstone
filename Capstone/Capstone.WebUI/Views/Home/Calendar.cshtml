@@ -1,4 +1,5 @@
-﻿@model Capstone.Domain.Entities.PartnershipNight
+﻿<!--model needs to be based on a list from the db of pn's per store-->
+@model Capstone.Domain.Entities.PartnershipNight
 
 @{
     ViewBag.Title = "Calendar";
@@ -6,6 +7,10 @@
 <script src="~/Scripts/js-calendarFunctions.js"></script>
 <h2>Calendar</h2>
 
+<!--Need to add drop down box to choose which restaurant they would like to view
+    OR get bvstore num for user and return that store's pn's-->
+<!--think I need to move the Calendar() function here and intersperse model stuff to get nights to show up
+    ALSO need to get it to take the current date-->
 <script type="text/javascript">
-    calendar("May 1, 2014");
+    calendar();
 </script>

@@ -1,11 +1,4 @@
 ﻿/*
-   New Perspectives on JavaScript
-   Tutorial 3
-   Tutorial Case
-
-   Author: Marian Kristiansen
-   Date:   5/8/2012
-
    Function List:
    calendar(calendarDay)
       Creates the calendar table for the month specified in the
