@@ -75,11 +75,6 @@ namespace Capstone.WebUI.Controllers
             return View();
         }
 
-        public ActionResult SplashTest()
-        {
-            return View();
-        }
-
         public ActionResult Contact()
         {
             //testing
@@ -93,6 +88,11 @@ namespace Capstone.WebUI.Controllers
         }
 
         public ViewResult Calendar()
+        {
+            return View();
+        }
+
+        public ActionResult Documents()
         {
             return View();
         }

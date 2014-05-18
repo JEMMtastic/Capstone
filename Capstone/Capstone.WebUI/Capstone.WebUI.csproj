@@ -382,8 +382,11 @@
     <Content Include="Views\AdminForm\Index.cshtml" />
     <Content Include="Views\AdminForm\Edit.cshtml" />
     <Content Include="Views\Home\Calendar.cshtml" />
+    <Content Include="Views\Home\Documents.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Documents\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
