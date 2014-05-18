@@ -89,7 +89,7 @@ namespace Capstone.WebUI.Controllers
         //need to pass a user to this method once the login stuff is worked out
         public ViewResult Calendar()
         {
-            User u = uRepo.GetUser(1);
+            User u = uRepo.GetUser(11);
             BvLocation bvLocation = lRepo.GetBvLocation(u.BvLocation.BvLocationId);
             var db = new CapstoneDbContext();
             List<PartnershipNight> events = (from e in db.PartnershipNights.Include("BvLocation")
