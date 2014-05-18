@@ -86,10 +86,16 @@ namespace Capstone.WebUI.Controllers
         {
             return View();
         }
-
+        //need to pass a user to this method once the login stuff is worked out
         public ViewResult Calendar()
         {
-            return View();
+            User u = uRepo.GetUser(1);
+            BvLocation bvLocation = u.BvLocation;
+            var db = new CapstoneDbContext();
+            List<PartnershipNight> events = (from e in db.PartnershipNights.Include("BvLocation")
+                                             where e.BVLocation.BvLocationId == u.BvLocation.BvLocationId
+                                             select e).ToList<PartnershipNight>();
+            return View(events);
         }
 
         public ActionResult Documents()
